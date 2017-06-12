@@ -9,9 +9,9 @@ Wireframes:
 
 Pivotal Tracker: https://trello.com/b/TxHMxpGU/muzica
 
-MVP Goals: Upload/download, working media player widget, user commenting
+MVP Goals: Upload/download
 
-Stretch Goals:
+Stretch Goals: Working media player widget, user commenting
 
 Surge:
 
