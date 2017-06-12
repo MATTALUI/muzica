@@ -13,6 +13,7 @@
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" defer></script>
+  <script src="https://cdn.rawgit.com/darrena092/AudioPlayer.js/master/AudioPlayer.js" charset="utf-8"defer></script>
   <script src="js/index.js" charset="utf-8" defer></script>
 </head>
 <body class= "background-gradient orange darken-4">
@@ -41,12 +42,10 @@
         <div class="title">
           <h4 class="center-align">Master Copy</h4>
         </div>
-        <div class="card exmaple-master">
-          <div class="card-image">
-            <img src="https://developer.android.com/design/media/widgets_hybrid.png">
-            <span class="card-title">Card Title</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-          </div>
+        <div class="card example-master">
+          <div id="playerContainer" class="playerOuter"></div>
+          <span class="card-title">Card Title</span>
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
           <div class="card-content">
             <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
           </div>
