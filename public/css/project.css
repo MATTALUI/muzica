@@ -1,0 +1,36 @@
+.big-boi, .commit-history{
+  height: 120vh;
+}
+.big-boi{
+  margin: 0 0 0 0;
+  border-top: 4px solid grey;
+}
+
+.commit-history{
+  margin: 0 0 0 0;
+  border-left: 4px solid grey;
+  border-top: 4px solid grey;
+  background-color: #424242;
+  opacity: .95;
+  overflow: scroll;
+}
+
+.main-body{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Roland_TR-808_%28large%29.jpg");
+  background-position: center;
+}
+
+.card{
+  opacity: 1;
+}
+
+.title{
+  color: white;
+}
+
+.new-commit{
+  position: fixed;
+  bottom: 1%;
+  left: .5%;
+  padding-bottom: 5%;
+}

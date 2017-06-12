@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'dbname'
+    connection: 'postgres://localhost/muzica_dev'
   },
 
   staging: {
