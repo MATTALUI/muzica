@@ -1,0 +1,11 @@
+.big-boi{
+  margin: 0 0 0 0;
+  border-top: 4px solid grey;
+}
+
+.commit-history{
+  margin: 0 0 0 0;
+  border-left: 4px solid grey;
+  border-top: 4px solid grey;
+  background-color: #424242;
+}
