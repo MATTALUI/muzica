@@ -1,5 +1,7 @@
 nav{
   border-bottom: 4px solid #e65100;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .big-boi, .commit-history{
   height: 120vh;
