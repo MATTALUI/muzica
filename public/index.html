@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+google-site-verification: google69ae39e63c26c55a.html
 <html lang="en">
 <head>
+  <meta name="google-site-verification" content="2Bo0vc6TdCq_nVeSMEQhK7jGqKTiOxuRh84vGEoLADI" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Muzica</title>
@@ -11,9 +13,22 @@
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
 </head>
+
+
+
+
+
+
+
+
+
+
+
+
 <body class= "background-gradient light-blue darken-3">
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="js/gapiinit.js"></script>
   <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
       <ul class="right hide-on-med-and-down">
@@ -36,55 +51,9 @@ npm is the package manager for JavaScript and the world’s largest software reg
 
 
       <!-- sign-in form -->
-      <h1 class="header center">
-      <div class="row center">
-        <h5 class="header col s12 dark"></h5>
-      </div>
-      <div class="container">
-          <div class="row">
-              <div class="col m6">
-                  <h4></h4>
-                  <br><br>
-                  <h5>Login In with SoundCloud</h5>
-                   <img src="https://lh3.googleusercontent.com/ZwkhZQkwDp8zN6s3HqIYjRMBio3hQhSZczBga6XGnp_DseFgBF6R4XCco49MpdFTdUVz=w300">
-              </div>
-              <div class="col m6">
-                  <h2 class="center-align">Log In</h2>
-                  <div class="row">
-                      <form class="col s12">
-                          <div class="row">
-                              <div class="input-field col s12">
-                                  <input id="email" type="email" class="validate">
-                                  <label for="email">Email</label>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="input-field col s12">
-                                  <input id="pass" type="password" class="validate">
-                                  <label for="pass">Password</label>
-                              </div>
-
-                          <div class="row">
-                              <div class="col m12">
-                                  <p class="right-align">
-                                      <button class="btn btn-large waves-effect waves-light orange darken-4" type="button" name="action">Login</button>
-                                  </p>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <br><br>
-
-    </div>
-  </div>
-
-
-  <div  class="container">
-    <div background-color=blueclass="section">
-
+      <h1>sign in</h1>
+      <button id="authorize-button" style="display: none;">Authorize</button>
+      <button id="signout-button" style="display: none;">Sign Out</button>
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
@@ -128,9 +97,14 @@ npm is the package manager for JavaScript and the world’s largest software reg
  <img src="http://your-image.jpg" style="visibility: hidden;" />
 </div>
   <!--  Scripts-->
-  <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script> -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/login.js" charset="utf-8"></script>
+  <script async defer src="https://apis.google.com/js/api.js"
+  onload="this.onload=function(){};handleClientLoad()"
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+</script>
+
+
 
   </body>
 </html>
