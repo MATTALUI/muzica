@@ -1,16 +1,17 @@
+nav{
+  border-bottom: 4px solid #e65100;
+}
 .big-boi, .commit-history{
   height: 120vh;
 }
 .big-boi{
   margin: 0 0 0 0;
-  border-top: 4px solid grey;
 }
 
 
 .commit-history{
   margin: 0 0 0 0;
   border-left: 4px solid grey;
-  border-top: 4px solid grey;
   background-color: rgba(66, 66, 66, 0.8);
   overflow: scroll;
 }
