@@ -9,13 +9,17 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" defer></script>
+  <script src="index.js" charset="utf-8" defer></script>
 </head>
-<body class= "background-gradient orange darken-4">
+<body class= "background-gradient light-blue darken-3">
   <nav class="grey darken-3" role="navigation">
-    <div class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
+    <div class="nav-wrapper container">
+      <a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
+      <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
         <li><a href="#">Production</a></li>
@@ -25,9 +29,11 @@
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">Build amazing things
+
 npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways.</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
+
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
@@ -68,6 +74,7 @@ npm is the package manager for JavaScript and the world’s largest software reg
         </div>
       </div>
 
+      
     </div>
     <br><br>
 
@@ -75,8 +82,10 @@ npm is the package manager for JavaScript and the world’s largest software reg
 
     </div>
   </div>
-<div >
-</div>
 
-  </body>
+  <div >
+  </div>
+
+</body>
+
 </html>
