@@ -23,6 +23,7 @@
   background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
   background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=0 );
+  height: 100vh;
 }
 
 .input-field input[type=email]:focus {
@@ -40,7 +41,12 @@
 .input-field input[type=password]:focus + label {
   color: #e65100;
 }
-
-/*.input-field label {
-  color: #2196f3;
-}*/
+.footer-808 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Roland_TR-808_%28large%29.jpg");
+  height: 200px;
+  background-position: top;
+}
+.login-box {
+  opacity: .95;
+  background-color: #424242;
+}
