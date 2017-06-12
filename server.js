@@ -10,7 +10,6 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 
-
 app.use(morgan());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
