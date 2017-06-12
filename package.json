@@ -1,0 +1,31 @@
+{
+  "name": "muzica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpciancio/muzica.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpciancio/muzica/issues"
+  },
+  "homepage": "https://github.com/gpciancio/muzica#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "knex": "^0.13.0",
+    "morgan": "^1.8.2",
+    "node": "0.0.0",
+    "pg": "^6.2.4",
+    "soundcloud": "^3.1.2"
+  }
+}
