@@ -1,3 +1,6 @@
+.big-boi, .commit-history{
+  height: 120vh;
+}
 .big-boi{
   margin: 0 0 0 0;
   border-top: 4px solid grey;
@@ -9,6 +12,7 @@
   border-top: 4px solid grey;
   background-color: #424242;
   opacity: .95;
+  overflow: scroll;
 }
 
 .main-body{
