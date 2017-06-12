@@ -27,3 +27,10 @@
 .title{
   color: white;
 }
+
+.new-commit{
+  position: fixed;
+  bottom: 1%;
+  left: .5%;
+  padding-bottom: 5%;
+}
