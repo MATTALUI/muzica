@@ -45,7 +45,6 @@ router.get('/:id', function(req, res, next){
   .then(function(commits){
     res.send(commits);
   });
-
 });
 router.post('/', function(req, res, next){
     try{
