@@ -19,6 +19,7 @@ $('#create_user').on ('click', ()=>{
       email: email,
       password: pass,
       first_name: first_name,
+      last_name: last_name;
       sc_username: sc_username
     },
     success: function(res){
