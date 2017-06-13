@@ -14,7 +14,7 @@ $('#create_user').on ('click', ()=>{
   // console.log(email,pass)
   $.ajax({
     type: "POST",
-    url: "http://localhost:8000/users/createuser",
+    url: "/users/createuser",
     data: {
       email: email,
       password: pass,
