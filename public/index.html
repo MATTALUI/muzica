@@ -18,7 +18,7 @@
   <script src="js/index.js" charset="utf-8" defer></script>
 </head>
 <body class= "background-gradient orange darken-4 footer-808">
-  <script src="js/gapiinit.js" charset="utf-8"></script>
+  <!-- <script src="js/gapiinit.js" charset="utf-8"></script> -->
   <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
       <ul class="right hide-on-med-and-down">
@@ -66,7 +66,7 @@ npm is the package manager for JavaScript and the world’s largest software reg
                               <div class="col m12">
                                   <p class="right-align">
 
-                                      <button class="login-button btn btn-large waves-effect" id=login type="button" name="action">Login</button>
+                                      <button class="login-button btn btn-large waves-effect" id="login" type="button" name="action">Login</button>
 
                                   </p>
                                   <br><br>
@@ -90,27 +90,27 @@ npm is the package manager for JavaScript and the world’s largest software reg
 			<form action="" class="modal-form">
         <div class="form-row">
           <label for="">Password</label>
-          <input type="text">
+          <input id="password" type="text">
         </div>
 				<div class="form-row">
-					<label for="">Username</label>
-					<input type="text">
+					<label for="">Email Address</label>
+					<input id="create_email" type="text">
 				</div>
 				<div class="form-row">
 					<label for="">First Name</label>
-					<input type="text">
+					<input id="first_name" type="text">
 				</div>
 				<div class="form-row">
 					<label for="">Last Name</label>
-					<input type="text">
+					<input id="last_name" type="text">
 				</div>
 				<div class="form-row">
-					<label for="">SoundCloud Usernam</label>
-					<input type="text">
+					<label for="">SoundCloud Username</label>
+					<input id="sc_username" type="text">
 				</div>
 		</div>
 		<div class="modal-footer">
-			<input type="submit" class="button good" value="Save">
+			<input id="create_user" type="submit" class="button good" value="Save">
 		</div>
 		</form>
 	</div>
@@ -125,6 +125,8 @@ npm is the package manager for JavaScript and the world’s largest software reg
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/login.js" charset="utf-8"></script>
+  <script src="js/createuser.js" charset="utf-8"></script>
+
   <!-- <script async defer src="https://apis.google.com/js/api.js"
   onload="this.onload=function(){};handleClientLoad()"
   onreadystatechange="if (this.readyState === 'complete') this.onload()"> -->
