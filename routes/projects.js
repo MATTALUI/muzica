@@ -39,11 +39,36 @@ router.get('/', function(req,res,next){
 });
 router.get('/:id', function(req, res, next){
   knex('commits')
-  .where('project_id', req.params.id).
-  then(function(commits){
+  .where('project_id', req.params.id)
+  .join('users', 'commits.submitted_by','=','users.id')
+  .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username'])
+  .then(function(commits){
     res.send(commits);
   });
+});
+router.post('/', function(req, res, next){
+    try{
+    let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
+    jwt.verify(token, 'secret', function(err, userInfo){
+      if(err){
+        res.send('you do not have access');
+      }else{
+      let needed = {
+        project_owner: userInfo.id,
+        project_title: req.body.projectTitle
+      }
+      knex('projects')
+      .insert(needed)
+      .returning('*')
+      .then(function(added){
+        res.send(added);
+      });
 
+      }
+    });
+  }
+  catch(err){
+  }
 });
 
 
