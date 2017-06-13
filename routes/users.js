@@ -5,6 +5,7 @@ const knex = require('../knex');
 const bcrypt = require('bcrypt');
 const path = require("path");
 const jwt = require('jsonwebtoken');
+const saltRounds = 8;
 // const humps = require('humps');
 
 router.post('/login', (req, res, next) => {
@@ -36,7 +37,7 @@ router.post('/login', (req, res, next) => {
             //   .where('user_id', 'user.id')
             //   .then(projects => {
             //     console.log(projects);
-                res.send('Valid email and password')
+                res.send(req.cookies)
             //     // res.sendFile(path.join( __dirname+'/home.html'));
             //   })
           }
@@ -45,6 +46,38 @@ router.post('/login', (req, res, next) => {
     });
 });
 
+router.post('/createuser', (req, res, next) => {
+  console.log(req.body);
+  knex('users')
+    .select('*')
+    .where('email', req.body.email)
+    .then(function(user) {
+      console.log(user);
+      if (user.length > 0) {
+        res.setHeader('Content-Type', 'text/plain');
+        return res.send("Invalid email, already taken");
+      } else {
+        bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+          if (err) {
+            res.send(err)
+          } else {
+            req.body.hashed_password = hash
+            delete req.body.password
+            knex('users')
+              .returning('*')
+              .insert(req.body)
+              .then(new_user=>{
+                res.send(new_user)
+              })
+            // res.send(req.body)
+          }
+        });
+      }
+
+    });
+
+
+});
 
 
 module.exports = router;
