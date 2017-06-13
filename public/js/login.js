@@ -12,6 +12,11 @@ $('#login').on ('click', ()=>{
     },
     success: function(res){
       console.log(res);
+      console.log(res.cookies)
+      $.ajax({
+        type: "GET",
+        url: "http://localhost:8000/users/home"
+      })
     }
   })
 });

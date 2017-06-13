@@ -36,7 +36,7 @@ router.post('/login', (req, res, next) => {
             //   .where('user_id', 'user.id')
             //   .then(projects => {
             //     console.log(projects);
-                res.send('Valid email and password')
+                res.send(req.cookies)
             //     // res.sendFile(path.join( __dirname+'/home.html'));
             //   })
           }
