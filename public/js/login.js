@@ -7,9 +7,10 @@ $('#login').on ('click', ()=>{
     url: "http://localhost:8000/users/login",
     data: {
       email: email,
-      password: pass},
-      success: function(res){
-        console.log(res);
-      }
+      password: pass
+    },
+    success: function(res){
+      console.log(res);
+    }
   })
 });
