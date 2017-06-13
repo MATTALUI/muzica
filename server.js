@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const dbapi = require('./routes/dbapi.js');
+const users = require('./routes/users.js');
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
@@ -21,6 +22,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use('/dbapi', dbapi);
+app.use('/users', users);
 app.get('/', (req, res, next)=>{
   res.send('hello world');
 });
