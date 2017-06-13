@@ -222,7 +222,7 @@ h1 {
 /* The Close Button */
 
 .close {
-	color: #424242;
+	color: ##e65100;
 	/*float: right;*/
 	font-size: 2rem;
 	font-weight: bold;
@@ -359,6 +359,9 @@ h1 {
 }
 .production-body-top-margin {
   margin-top: 430px;
+}
+.home-body-top-margin {
+  margin-top: 70px;
 }
 nav{
   border-bottom: 4px solid #e65100;
