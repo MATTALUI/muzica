@@ -58,14 +58,6 @@
           <h3 class="orange darken-4 center-align">Commit History</h3>
         </div>
         <div class="card-container col s12">
-          <div class="card exmaple-commit-1">
-            <div id="playerContainer1" class="playerOuter"></div>
-            <span class="card-title">Card Title</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-          </div>
         </div>
       </div><!--commit column-->
       <div id="commit-modal" class="modal modal-fixed-footer commit-form">
@@ -95,5 +87,17 @@
       </div>
     </div>
   </div>
+  <script id="Commmit" type="text/x-handlebars-template">
+    <div class="card exmaple-commit-1">
+      <div id="playerContainer1" class="playerOuter">
+        <iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url="></iframe>
+      </div>
+      <span class="card-title">Card Title</span>
+      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </script>
 </body>
 </html>
