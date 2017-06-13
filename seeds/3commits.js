@@ -22,7 +22,14 @@ exports.seed = function(knex, Promise) {
       project_id: 1,
       submitted_by: 2,
       widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tee-grizzley/from-the-d-to-the-a-feat-lil-yachty',
-      is_master: false,
+      is_master: true,
+    },
+    {
+      id: 4,
+      project_id: 2,
+      submitted_by: 2,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tee-grizzley/from-the-d-to-the-a-feat-lil-yachty',
+      is_master: true,
     }
     ]);
     })
