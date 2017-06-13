@@ -76,9 +76,8 @@ router.post('/createuser', (req, res, next) => {
               .returning('*')
               .insert(req.body)
               .then(new_user=>{
-                res.send(new_user)
+                return res.send(new_user)
               })
-            // res.send(req.body)
           }
         });
       }

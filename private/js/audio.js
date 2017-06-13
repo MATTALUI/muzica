@@ -64,3 +64,7 @@ $('#logout_button').on('click', () => {
     }
   })
 });
+
+$('#home_button').on('click', () => {
+          window.location.replace('/home.html')
+});

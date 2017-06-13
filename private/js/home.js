@@ -20,7 +20,17 @@ function makeCards(array) {
 }
 
 $('#logout_button').on('click', () => {
-  req.cookies.token = ''
-  console.log(req.cookies);
-  window.location.replace('/')
+  $.ajax({
+    type: "GET",
+    url: "/users/logout",
+    success: function(res){
+        // console.log(res);
+        if (res){
+          console.log(res);
+          window.location.replace('../')
+        } else{
+          console.log('Error');
+        }
+    }
+  })
 });

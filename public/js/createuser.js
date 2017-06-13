@@ -1,4 +1,4 @@
-$('#create_user').on ('click', ()=>{
+$('#create_user').on('click', ()=>{
   console.log('456');
   var email = $("#create_email").val();
   var pass = $("#password").val();
@@ -9,9 +9,10 @@ $('#create_user').on ('click', ()=>{
 
   if (pass!==confirm_pass) {
     console.log('passwords do not match');
+
     return res.send('passwords do not match')
   }
-  // console.log(email,pass)
+
   $.ajax({
     type: "POST",
     url: "/users/createuser",
@@ -24,6 +25,7 @@ $('#create_user').on ('click', ()=>{
     },
     success: function(res){
       if(res){
+        console.log(res);
         window.location.replace('/home.html')
       }
       console.log(res);
