@@ -5,18 +5,18 @@ $('#login').on ('click', ()=>{
   // console.log(email,pass)
   $.ajax({
     type: "POST",
-    url: "http://localhost:8000/users/login",
+    url: "/users/login",
     data: {
       email: email,
       password: pass
     },
     success: function(res){
       console.log(res);
-      console.log(res.cookies)
-      $.ajax({
-        type: "GET",
-        url: "http://localhost:8000/users/home"
-      })
+        if (res===true){
+          window.location.replace('/home.html')
+        } else{
+          console.log('Incorrect email or password');
+        }
     }
   })
 });
