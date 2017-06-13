@@ -7,7 +7,8 @@ const jwt = require('jsonwebtoken');
 
 
 router.get('/', function(req,res,next){
-  let token = req.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
+
+  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
   // // this was just to generate a testing token
   // let aToken = jwt.sign({
   //   id: 1,
