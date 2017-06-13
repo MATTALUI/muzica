@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const dbapi = require('./routes/dbapi.js');
 const users = require('./routes/users.js');
-const create = require('./routes/create.js');
+// const create = require('./routes/create.js');
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
@@ -18,9 +18,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use('/',(req,res,next)=>{
-
-})
+  next();
+});
 app.use(express.static('private'));
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
