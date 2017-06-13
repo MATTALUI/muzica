@@ -24,7 +24,6 @@ router.post('/login', (req, res, next) => {
             alert('Invalid email or password')
           } else {
             res.send('Valid email and password')
-            // res.sendFile(path.join( __dirname+'/home.html'));
           }
         });
       }

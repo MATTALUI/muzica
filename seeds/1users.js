@@ -4,6 +4,7 @@ exports.seed = function(knex, Promise) {
   .del()
     .then(function () {
       return knex('users').insert([{
+        id: 1,
         first_name: 'Matt',
         last_name: 'Hummer',
         email: 'cats@cats.com',
@@ -11,6 +12,7 @@ exports.seed = function(knex, Promise) {
         sc_username: 'mattalui'
       },
     {
+      id: 2,
       first_name: 'Adam',
       last_name: 'Smith',
       email: 'asmith13194@gmail.com',
