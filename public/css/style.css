@@ -12,7 +12,10 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
-
+.section.no-pad-bot {
+   margin-right: 500px;
+   margin-top: inherit;;
+}
 .background-gradient {
   background: rgba(255,255,255,1);
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
@@ -48,6 +51,8 @@
 .login-box {
   opacity: .95;
   background-color: #424242;
+  height: 500px;
+  width: 800px;
 }
 .login-create {
   color: #e65100;
