@@ -103,7 +103,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	margin-top: 20vh;
+	margin-top: 20;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background: #424242;
@@ -349,9 +349,7 @@ h1 {
 		transform: translateY(0%);
 	}
 }
-.home-body-top-margin {
-  margin-top: 470px;
-}
+
 nav{
   border-bottom: 4px solid #e65100;
   border-bottom-right-radius: 5px;
