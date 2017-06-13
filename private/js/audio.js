@@ -15,5 +15,5 @@ function getUrlVars()
 }
 
 $(document).ready(function(){
-  console.log(getUrlVars());
+  getUrlVars();
 });
