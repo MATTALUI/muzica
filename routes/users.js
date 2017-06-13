@@ -25,6 +25,7 @@ router.post('/login', (req, res, next) => {
           if (err) {
             alert('Invalid email or password')
           } else {
+
             var token = jwt.sign(user, 'secret');
             // console.log(token);
             res.cookie('token', token, {

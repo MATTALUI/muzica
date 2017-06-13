@@ -5,9 +5,9 @@ const port = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const dbapi = require('./routes/dbapi.js');
 const users = require('./routes/users.js');
-// const create = require('./routes/create.js');
+const projects = require('./routes/projects.js');
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
@@ -27,15 +27,14 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-app.use('/dbapi', dbapi);
 app.use('/users', users);
+app.use('/projects', projects);
 app.get('/', (req, res, next)=>{
   res.send('hello world');
 });
 app.use('/', (req,res,next)=>{
   res.sendStatus(404);
 });
-
 
 app.listen(port, ()=>{
   console.log('listening on ', port);
