@@ -10,6 +10,9 @@ exports.seed = function(knex, Promise) {
       {
         project_owner: 1,
         project_title: 'What is a Popsicle?'
+      }, {
+        project_owner: 2,
+        project_title: 'AtomBomb'
       }]);
     })
     .then(function(){
