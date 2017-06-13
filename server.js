@@ -22,6 +22,27 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+//redirect for users with tokens
+// app.use('/public',(req,res,next)=>{
+//   console.log(req.cookies);
+//   console.log("hello");
+//   if(req.cookies.token){
+//     console.log("Line 29: true");
+//     var token = req.cookies.token;
+//     jwt.verify(token, 'secret', function(err, decoded) {
+//       if(err){
+//         console.log(err);
+//         next()
+//       }
+//     console.log(decoded)
+//     // window.location.replace('/home.html')
+//     return res.redirect('/home.html')
+//     next()
+//   });
+//   }
+//   next()
+// })
 app.use(express.static('public'));
 app.use('/dbapi', dbapi);
 app.use('/users', users);
