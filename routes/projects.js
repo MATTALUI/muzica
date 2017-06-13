@@ -39,10 +39,15 @@ router.get('/', function(req,res,next){
 });
 router.get('/:id', function(req, res, next){
   knex('commits')
-  .where('project_id', req.params.id).
-  then(function(commits){
+  .where('project_id', req.params.id)
+  .join('users', 'commits.submitted_by','=','users.id')
+  .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username'])
+  .then(function(commits){
     res.send(commits);
   });
+});
+router.post('/', function(req, res, next){
+
 
 });
 
