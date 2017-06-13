@@ -3,6 +3,9 @@ nav{
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+h3 {
+  color: white;
+}
 .big-boi, .commit-history{
   height: 120vh;
 }
