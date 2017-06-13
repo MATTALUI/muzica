@@ -13,8 +13,9 @@
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js" defer></script>
   <script src="js/index.js" charset="utf-8" defer></script>
-  <script src="js/home.js" charset="utf-8" defe></script>
+  <script src="js/home.js" charset="utf-8" defer></script>
 </head>
 
 
@@ -43,18 +44,21 @@
         <div class="title">
           <h3 class="orange darken-4 center-align">Projects</h3>
         </div>
-        <div class="card exmaple-commit">
-          <div class="card-image">
-            <img src="https://developer.android.com/design/media/widgets_hybrid.png">
-            <span class="card-title">Project 1</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red" href="production.html?id=1"><i class="material-icons">add</i></a>
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-          </div>
+        <div class="project-container">
         </div>
       </div>
     </div>
   </div>
+  <script id="Project" type="text/x-handlebars-template">
+    <div class="card exmaple-commit">
+      <div class="card-image">
+        <h3>{{title}}</h3>
+        <a class="btn-floating halfway-fab waves-effect waves-light red" href="production.html?id={{id}}"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </script>
 </body>
 </html>

@@ -5,7 +5,6 @@ const knex = require('../knex');
 const bcrypt = require('bcrypt');
 const path = require("path");
 const jwt = require('jsonwebtoken');
-=======
 const saltRounds = 8;
 // const humps = require('humps');
 
