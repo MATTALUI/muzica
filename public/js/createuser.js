@@ -5,13 +5,11 @@ $('#create_user').on ('click', ()=>{
   var first_name = $("#first_name").val();
   var last_name = $("#last_name").val();
   var sc_username = $("#sc_username").val();
-  var confirm_pass = $('#confirm_password')
+  var confirm_pass = $('#confirm_password').val()
 
-  // if (pass!==confirm_pass) {
-  //   console.log('passwords do not match');
-  //   return res.send('passwords do not match')
-  // }
-  // console.log(email,pass)
+  if (pass!==confirm_pass) {
+    console.log('passwords do not match');
+  }
   $.ajax({
     type: "POST",
     url: "http://localhost:8000/users/createuser",
@@ -24,6 +22,7 @@ $('#create_user').on ('click', ()=>{
     },
     success: function(res){
       if(res){
+        console.log(res);
         window.location.replace('/home.html')
       }
       console.log(res);

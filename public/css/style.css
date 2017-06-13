@@ -6,7 +6,7 @@
  * Made By MaterializeCSS.com
  */
 .muzica-logo{
-  /*content: url("/private/muzicalogo.png");*/
+  /*content: url("../private/muzicalogo.png");*/
   background-repeat: no-repeat;
   width: 100px; /*or your image's width*/
   height: 300px; /*or your image's height*/
