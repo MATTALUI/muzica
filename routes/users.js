@@ -40,8 +40,9 @@ router.post('/login', (req, res, next) => {
             //   .where('user_id', 'user.id')
             //   .then(projects => {
             //     console.log(projects);
-            // res.send(true)
+
                 res.send(true)
+
             //     // res.sendFile(path.join( __dirname+'/home.html'));
             //   })
           }else{
@@ -79,10 +80,7 @@ router.post('/createuser', (req, res, next) => {
           }
         });
       }
-
     });
-
-
 });
 
 

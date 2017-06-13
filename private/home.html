@@ -13,19 +13,19 @@
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js" defer></script>
   <script src="js/index.js" charset="utf-8" defer></script>
-  <script src="js/home.js" charset="utf-8" defe></script>
+  <script src="js/home.js" charset="utf-8" defer></script>
 </head>
 
 
-<body class= "background-gradient orange darken-4 footer-808">
+<body class= "home-body-top-margin orange darken-4 footer-808">
   <nav class="grey darken-3" role="navigation">
-    <div class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
+    <div id='nav' class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
         <li><a href="#">Production</a></li>
         <li id="logout_button"><a href="#">Log Out</a></li>
-        <!-- <li><a href="#">Create Account</a></li> -->
       </ul>
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#">This is where our list of links live just need to add more li's</a></li>
@@ -42,20 +42,23 @@
     <div class="row">
       <div class="col s10 offset-s1 m8 offset-m2 project-history">
         <div class="title">
-          <h4 class="center-align">Projects</h4>
+          <h3 class="orange darken-4 center-align">Projects</h3>
         </div>
-        <div class="card exmaple-commit">
-          <div class="card-image">
-            <img src="https://developer.android.com/design/media/widgets_hybrid.png">
-            <span class="card-title">Project 1</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red" href="production.html?id=1"><i class="material-icons">add</i></a>
-          </div>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-          </div>
+        <div class="project-container">
         </div>
       </div>
     </div>
   </div>
+  <script id="Project" type="text/x-handlebars-template">
+    <div class="card exmaple-commit">
+      <div class="card-image">
+        <h3>{{title}}</h3>
+        <a class="btn-floating halfway-fab waves-effect waves-light red" href="production.html?id={{id}}"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </script>
 </body>
 </html>

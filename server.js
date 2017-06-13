@@ -5,8 +5,8 @@ const port = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const dbapi = require('./routes/dbapi.js');
 const users = require('./routes/users.js');
+const projects = require('./routes/projects.js');
 const jwt = require('jsonwebtoken');
 
 if (process.env.NODE_ENV !== 'production') {
@@ -23,6 +23,8 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+app.use('/users', users);
+app.use('/projects', projects);
 
 //redirect for users with tokens
 // app.use('/',(req,res,next)=>{
@@ -66,7 +68,6 @@ app.get('/', (req, res, next)=>{
 app.use('/', (req,res,next)=>{
   res.sendStatus(404);
 });
-
 
 app.listen(port, ()=>{
   console.log('listening on ', port);
