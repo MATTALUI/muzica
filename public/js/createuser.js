@@ -23,6 +23,9 @@ $('#create_user').on ('click', ()=>{
       sc_username: sc_username
     },
     success: function(res){
+      if(res){
+        window.location.replace('/home.html')
+      }
       console.log(res);
     }
   })

@@ -47,3 +47,20 @@ $(document).ready(function(){
   })
   $('.example-master').children('iframe').attr('src',""+ setIframe('jahseh-onfroy', 'garettes-revenge-produced')+"");
 });
+
+$('#logout_button').on('click', () => {
+  console.log("start");
+  $.ajax({
+    type: "GET",
+    url: "/users/logout",
+    success: function(res){
+        // console.log(res);
+        if (res){
+          console.log(res);
+          window.location.replace('../')
+        } else{
+          console.log('Error');
+        }
+    }
+  })
+});
