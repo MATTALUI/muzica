@@ -1,4 +1,4 @@
-$('#create_user').on ('click', ()=>{
+$('#create_user').on('click', ()=>{
   console.log('456');
   var email = $("#create_email").val();
   var pass = $("#password").val();
