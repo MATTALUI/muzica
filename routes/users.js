@@ -41,7 +41,8 @@ router.post('/login', (req, res, next) => {
             //   .where('user_id', 'user.id')
             //   .then(projects => {
             //     console.log(projects);
-
+            // console.log("ready to redirect");
+              // return res.redirect('../home.html')
                 res.send(true)
 
             //     // res.sendFile(path.join( __dirname+'/home.html'));
@@ -84,5 +85,11 @@ router.post('/createuser', (req, res, next) => {
     });
 });
 
+router.get('/logout',(req,res,next)=>{
+  console.log(req.cookies.token)
+  req.cookies.token = ''
+  console.log(req.cookies.token)
+  res.send('Logged Out')
+})
 
 module.exports = router;

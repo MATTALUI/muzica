@@ -11,9 +11,9 @@ $('#login').on ('click', ()=>{
       password: pass
     },
     success: function(res){
-      console.log(res);
-        if (res===true){
-          window.location.replace('/home.html')
+        // console.log(res);
+        if (res=true){
+          window.location.replace('../home.html')
         } else{
           console.log('Incorrect email or password');
         }
