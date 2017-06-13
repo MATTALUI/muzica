@@ -14,8 +14,38 @@ function getUrlVars()
     return vars;
 }
 
+function makeCards(array){
+  for (var i = 0; i < array.length; i++){
+    var widgetSrc = array[i].widget_url;
+    var SubmittedBy = array[i].first_name + " " + array[i].last_name;
+    var source = $("#Commit").html();
+    var template = Handlebars.compile(source);
+    var context = {submitter: SubmittedBy, widget_url: widgetSrc};
+    var html= template(context);
+    if(array[i].is_master){
+      $('.master-container').prepend(html);
+    }else{
+      $('.card-container').prepend(html);
+    }
+  }
+}
+
+function setIframe(username, track){
+  var widgetapi = "https://w.soundcloud.com/player/?url=";
+  return ""+ widgetapi + "https://soundcloud.com/"+ username + "/" + track + "";
+}
+
+function addCommit(){
+  var $newCom = $('.example-master').clone();
+  $newCom.prependTo('.card-container');
+}
+
 $(document).ready(function(){
-  getUrlVars();
+  var projectId = getUrlVars().id;
+  $.get(`http://localhost:8000/projects/${projectId}`, function(response){
+    makeCards(response);
+  })
+  $('.example-master').children('iframe').attr('src',""+ setIframe('jahseh-onfroy', 'garettes-revenge-produced')+"");
 });
 
 $('#logout_button').on('click', () => {
