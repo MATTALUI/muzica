@@ -85,7 +85,9 @@ html {
 	box-sizing: border-box;
 	height: 100%;
 }
-
+h3 {
+  color: white;
+}
 *,
 *:before,
 *:after {
@@ -346,4 +348,12 @@ h1 {
 	100% {
 		transform: translateY(0%);
 	}
+}
+.home-body-top-margin {
+  margin-top: 470px;
+}
+nav{
+  border-bottom: 4px solid #e65100;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }

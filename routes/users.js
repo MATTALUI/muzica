@@ -8,8 +8,10 @@ const jwt = require('jsonwebtoken');
 const saltRounds = 8;
 // const humps = require('humps');
 
+
 router.post('/login', (req, res, next) => {
-  // console.log(req.body);
+  console.log(req.body);
+  console.log('line12');
   knex('users')
     .select('*')
     .where('email', req.body.email)
@@ -20,27 +22,31 @@ router.post('/login', (req, res, next) => {
         res.setHeader('Content-Type', 'text/plain');
         alert("Incorrect email or password");
       } else {
-        bcrypt.compare(req.body.password, user.hashed_password, function(err, match) {
-          // console.log(req.body);
+        bcrypt.compare(req.body.password, user.hashed_password, function(err, decode) {
+          console.log(decode);
+          console.log('line25');
           if (err) {
-            alert('Invalid email or password')
-          } else {
-
+            return res.send('Invalid email or password')
+          } else if (decode===true){
             var token = jwt.sign(user, 'secret');
             // console.log(token);
             res.cookie('token', token, {
               httpOnly: true
             });
             // console.log(req.cookies);
-            console.log(user.id);
+            // console.log(user.id);
             // knex('projects')
             //   .select('*')
             //   .where('user_id', 'user.id')
             //   .then(projects => {
             //     console.log(projects);
-                res.send(req.cookies)
+
+                res.send(true)
+
             //     // res.sendFile(path.join( __dirname+'/home.html'));
             //   })
+          }else{
+            res.send(false)
           }
         });
       }
@@ -74,10 +80,7 @@ router.post('/createuser', (req, res, next) => {
           }
         });
       }
-
     });
-
-
 });
 
 
