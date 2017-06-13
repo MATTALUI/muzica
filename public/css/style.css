@@ -13,7 +13,6 @@
 	font-size: inherit;
 }
 
-/*having trouble getting this to work*/
 .background-gradient {
   background: rgba(255,255,255,1);
   background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
@@ -49,4 +48,9 @@
 .login-box {
   opacity: .95;
   background-color: #424242;
+}
+.login-create {
+  color: orange;
+  padding-left: 100px;
+  
 }
