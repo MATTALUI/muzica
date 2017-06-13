@@ -23,8 +23,8 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-app.use('/users', users);
-app.use('/projects', projects);
+
+
 
 //redirect for users with tokens
 // app.use('/',(req,res,next)=>{
@@ -47,7 +47,7 @@ app.use('/projects', projects);
 //   next()
 // })
 app.use(express.static('public'));
-app.use('/dbapi', dbapi);
+app.use('/projects', projects);
 app.use('/users', users);
 app.use('/',(req,res,next)=>{
   console.log(req.cookies.token);
