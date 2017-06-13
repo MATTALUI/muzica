@@ -17,3 +17,20 @@ function getUrlVars()
 $(document).ready(function(){
   getUrlVars();
 });
+
+$('#logout_button').on('click', () => {
+  console.log("start");
+  $.ajax({
+    type: "GET",
+    url: "/users/logout",
+    success: function(res){
+        // console.log(res);
+        if (res){
+          console.log(res);
+          window.location.replace('../')
+        } else{
+          console.log('Error');
+        }
+    }
+  })
+});

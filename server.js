@@ -47,7 +47,6 @@ app.use('/projects', projects);
 //   next()
 // })
 app.use(express.static('public'));
-app.use('/dbapi', dbapi);
 app.use('/users', users);
 app.use('/',(req,res,next)=>{
   console.log(req.cookies.token);
