@@ -17,10 +17,11 @@ function getUrlVars()
 function makeCards(array){
   for (var i = 0; i < array.length; i++){
     var projectId = array[i].id;
-    var projectTittle = array[i].project_title;
+    var widgetSrc = array[i].widget_url;
+    var SubmittedBy = array[i].project_title;
     var source = $("#Commit").html();
     var template = Handlebars.compile(source);
-    var context = {title: projectTittle, id: projectId};
+    var context = {submitter: SubmittedBy, widget_url: widgetSrc, };
     var html= template(context);
     $('.project-container').prepend(html);
   }
@@ -29,7 +30,7 @@ function makeCards(array){
 $(document).ready(function(){
   var projectId = getUrlVars().id;
   console.log(projectId);
-  // $.get('http://localhost:8000/projects', function(response){
-  //
-  // });
+  $.get(`http://localhost:8000/projects/${projectId}`, function(response){
+    console.log(response);
+  })
 });
