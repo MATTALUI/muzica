@@ -7,10 +7,10 @@ $('#create_user').on ('click', ()=>{
   var sc_username = $("#sc_username").val();
   var confirm_pass = $('#confirm_password')
 
-  // if (pass!==confirm_pass) {
-  //   console.log('passwords do not match');
-  //   return res.send('passwords do not match')
-  // }
+  if (pass!==confirm_pass) {
+    console.log('passwords do not match');
+    return res.send('passwords do not match')
+  }
   // console.log(email,pass)
   $.ajax({
     type: "POST",
