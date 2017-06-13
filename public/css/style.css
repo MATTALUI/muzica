@@ -5,7 +5,14 @@
  *
  * Made By MaterializeCSS.com
  */
-
+.muzica-logo{
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: auto; /*or your image's width*/
+  height: auto; /*or your image's height*/
+  margin: 0;
+  padding: 0;
+}
 .icon-block {
   padding: 0 15px;
 }
@@ -14,7 +21,7 @@
 }
 .section.no-pad-bot {
    margin-right: 500px;
-   margin-top: inherit;;
+
 }
 .background-gradient {
   background: rgba(255,255,255,1);
