@@ -17,6 +17,7 @@ app.use(morgan());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -24,7 +25,7 @@ app.use(function(req, res, next) {
 });
 
 //redirect for users with tokens
-// app.use('/public',(req,res,next)=>{
+// app.use('/',(req,res,next)=>{
 //   console.log(req.cookies);
 //   console.log("hello");
 //   if(req.cookies.token){
