@@ -8,7 +8,6 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="css/project.css">
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
@@ -69,10 +68,10 @@
           </div>
         </div>
       </div><!--commit column-->
-      <div id="modal1" class="modal modal-fixed-footer">
+      <div id="commit-modal" class="modal modal-fixed-footer commit-form">
         <div class="modal-content">
           <h4>Modal Header</h4>
-          <form class="col s12">
+          <form class="col s12 commit-data">
             <div class="row">
               <div class="input-field col s12">
                 <input id="track" type="text" class="validate">
@@ -81,17 +80,17 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Sound Notes</label>
+                <textarea id="soundNotes" class="materialize-textarea"></textarea>
+                <label for="soundNotes">Sound Notes</label>
               </div>
             </div>
           </form>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer commit-form">
           <a href="#!" class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
         </div>
       </div>
-      <div class="waves-effect waves-light orange darken-4 btn-large new-commit" data-target="modal1">
+      <div class="waves-effect waves-light orange darken-4 btn-large new-commit" data-target="commit-modal">
         <p>Add a new Commit</p>
       </div>
     </div>

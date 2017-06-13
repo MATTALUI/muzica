@@ -8,28 +8,29 @@
 
 function setIframe(username, track){
   var widgetapi = "https://w.soundcloud.com/player/?url=";
-  $('iframe').attr('src', widgetapi + 'https://soundcloud.com/'+ username + '/' + track + '');
+  return ""+ widgetapi + "https://soundcloud.com/"+ username + "/" + track + "";
 }
 
 function addCommit(){
   var $newCom = $('.example-master').clone();
-  console.log($newCom);
   $newCom.prependTo('.card-container');
 }
 
-$(document).ready(function(){
-  setIframe('jahseh-onfroy', 'garettes-revenge-produced');
 
+$(document).ready(function(){
+$('.example-master').children('iframe').attr('src',""+ setIframe('jahseh-onfroy', 'garettes-revenge-produced')+"");
   $('.add-commit').on('click', function(){
+    var trackName = ($('#track').val());
+    var comment = ($('#soundNotes').val());
     addCommit();
   });
 });
 
 // get the elements
-const modal = document.getElementById('myModal')
-const button = document.getElementById("modal-button")
-const close = document.querySelectorAll(".close")[0]
-const clickable = document.querySelectorAll('.clickable')
+const modal = document.getElementById('myModal');
+const button = document.getElementById("modal-button");
+const close = document.querySelectorAll(".close")[0];
+const clickable = document.querySelectorAll('.clickable');
 
 const openModal = function() {
 	modal.style.display = "block"
