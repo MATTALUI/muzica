@@ -9,10 +9,13 @@ $('#create_user').on('click', ()=>{
 
   if (pass!==confirm_pass) {
     console.log('passwords do not match');
+
+    return res.send('passwords do not match')
   }
+
   $.ajax({
     type: "POST",
-    url: "http://localhost:8000/users/createuser",
+    url: "/users/createuser",
     data: {
       email: email,
       password: pass,
