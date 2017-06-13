@@ -360,3 +360,8 @@ h1 {
 .production-body-top-margin {
   margin-top: 430px;
 }
+nav{
+  border-bottom: 4px solid #e65100;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
