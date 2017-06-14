@@ -8,9 +8,10 @@ function makeCards(array){
   for (var i = 0; i < array.length; i++){
     var projectId = array[i].id;
     var projectTitle = array[i].project_title;
+    var comments = array[i].project_description;
     var source = $("#Project").html();
     var template = Handlebars.compile(source);
-    var context = {title: projectTitle, id: projectId};
+    var context = {title: projectTitle, id: projectId, comment: comments};
     var html= template(context);
     $('.project-container').prepend(html);
   }

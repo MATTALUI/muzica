@@ -89,10 +89,21 @@
                 <label for="soundNotes">Sound Notes</label>
               </div>
             </div>
+            <div class="row">
+              Do you want to make this track the new master?
+              <p>
+                <input name="group1" type="radio" id="true" unchecked/>
+                <label for="true">Yes</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="false" checked/>
+                <label for="false">No</label>
+              </p>
+            </div>
           </form>
         </div>
         <div class="modal-footer commit-form">
-          <a class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
+          <a class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Add Commit</a>
         </div>
       </div>
       <div class="waves-effect waves-light orange darken-4 btn-large new-commit" data-target="commit-modal">
@@ -106,11 +117,9 @@
       <div id="playerContainer1" class="playerOuter">
         <iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="{{widget_url}}"></iframe>
       </div>
-      <span class="card-title">Card Title</span>
-      <span class="commit-by">WIP added by {{submitter}}</span>
-      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <span class="card-title commit-by"> Added by {{submitter}}</span>
       <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <p>{{comments}}</p>
       </div>
     </div>
   </script>
