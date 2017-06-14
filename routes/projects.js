@@ -23,9 +23,6 @@ router.get('/', function(req,res,next){
     if(err){
       res.send('token doesnt match');
     }else{
-      // console.log(value);
-      // let userId = value.id;
-      // res.send(`${userId}`);
       knex('projects')
       .where('project_owner', value.id)
       .then(function(projects){
@@ -77,6 +74,7 @@ router.post('/commit', function(req, res, next){
   jwt.verify(token, 'secret', function(err, userInfo){
     if(err){
       res.send('you do not have access');
+
     }else{
       var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
       let needed = {
@@ -87,29 +85,39 @@ router.post('/commit', function(req, res, next){
         is_master: req.body.is_master
       }
       if(req.body.is_master == 'true' || req.body.is_master == true){
-        res.send('it\'s master. reset, then insert');
+        knex('commits')
+        .update('is_master', false)
+        .where('project_id', req.body.projectId)
+        .where('is_master', true)
+        .returning('*')
+        .then(function(updated){
+          knex('commits')
+          .insert(needed)
+          .returning('*')
+          .then(function(addedCommit){
+            knex('commits')
+            .where('project_id', req.body.projectId)
+            .join('users', 'commits.submitted_by','=','users.id')
+            .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+            .then(function(commits){
+              res.send(commits);
+            });
+          });
+        });
       }else{
         knex('commits')
         .insert(needed)
         .returning('*')
         .then(function(addedCommit){
-          res.send(addedCommit);
+          knex('commits')
+          .where('project_id', req.body.projectId)
+          .join('users', 'commits.submitted_by','=','users.id')
+          .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+          .then(function(commits){
+            res.send(commits);
+          });
         });
       }
-
-
-      // knex()
-      // .update('is_master', false)
-      // .where('project_id', req.body.projectId)
-      // .where('is_master', true)
-      // .then(function(){
-      //   knex('commits')
-      //   .insert(needed)
-      //   .returning('*')
-      //   .then(function(addedCommit){
-      //     res.send(addedCommit);
-      //   });
-      // });
     }
   });
 }
