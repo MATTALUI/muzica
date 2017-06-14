@@ -17,21 +17,39 @@
   <script src="js/audio.js" charset="utf-8" defer></script>
 </head>
 <body class="orange darken-4">
-  <nav class="grey darken-3" role="navigation">
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/production.html">Project 1</a></li>
+  <li><a href="/production.html">Project two</a></li>
+  <li class="divider"></li>
+  <li><a href="/production.html">three</a></li>
+</ul>
+<ul id="dropdown3" class="dropdown-content">
+  <li><a href="/production.html">Project 1</a></li>
+  <li><a href="/production.html">Project two</a></li>
+  <li class="divider"></li>
+  <li><a href="/production.html">three</a></li>
+</ul>
+  <nav class="orange darken-4" role="navigation">
     <div class="nav-wrapper container">
       <a src="" id="logo-container" href="#" class="brand-logo"></a>
       <a class="center brand-logo" src ="" href="#">Project Title</a>
       <ul class="right hide-on-med-and-down">
         <li><a id="home_button" href="#">Home</a></li>
-        <!-- <li><a href="#">Production</a></li> -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Production
+          <i class="material-icons right">arrow_drop_down</i>
+        </a></li>
         <li><a id="logout_button" href="#">Log Out</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="grey darken 3 side-nav">
+      <ul id="nav-mobile" class="orange darken-4 side-nav">
         <li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Production</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="/home.html">Home</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Production
+            <i class="material-icons right">arrow_drop_down</i>
+          </a></li>
+          <li class="divider"></li>
+          <li class="logout_button"><a href="#">Log Out</a></li>
         </li>
       </ul>
     </div>

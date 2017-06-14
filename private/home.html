@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <title>Muzica</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
@@ -19,30 +20,50 @@
 </head>
 
 
-<body class= "orange darken-4 footer-808">
-  <nav class="grey darken-3" role="navigation">
-    <div id='nav' class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
+<body class="orange darken-4 footer-808">
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="/production.html">Project 1</a></li>
+    <li><a href="/production.html">Project two</a></li>
+    <li class="divider"></li>
+    <li><a href="/production.html">three</a></li>
+  </ul>
+  <ul id="dropdown3" class="dropdown-content">
+    <li><a href="/production.html">Project 1</a></li>
+    <li><a href="/production.html">Project two</a></li>
+    <li class="divider"></li>
+    <li><a href="/production.html">three</a></li>
+  </ul>
+  <nav class="orange darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a src="" id="logo-container" href="#" class="brand-logo"></a>
+      <a class="center brand-logo" src="" href="#">Project Title</a>
       <ul class="right hide-on-med-and-down">
-        <!-- <li><a href="#">Home</a></li> -->
-        <li><a href="#">Production</a></li>
-        <li id="logout_button"><a href="#">Log Out</a></li>
-      </ul>
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">This is where our list of links live just need to add more li's</a></li>
-
-        <li><a href="#">Build amazing things
-          npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways.</a>
-        </li>
-
+        <li><a id="home_button" href="#">Home</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Production
+            <i class="material-icons right">arrow_drop_down</i>
+          </a></li>
+        <li><a id="logout_button" href="#">Log Out</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="orange darken-4 side-nav">
+        <li>
+          <li><a href="#">About</a></li>
+          <li><a href="/home.html">Home</a></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Production
+              <i class="material-icons right">arrow_drop_down</i>
+            </a></li>
+          <li class="divider"></li>
+          <li class="logout_button"><a href="#">Log Out</a></li>
+        </li>
+      </ul>
     </div>
   </nav>
+
   <div class="main-body">
     <div class="row">
-      <div class="orange darken-4 col s10 offset-s1 m8 offset-m2 project-history">
+      <div class="orange-text text-darken-4 col s10 offset-s1 m8 offset-m2 project-history">
         <div class="title">
-          <h3 class="orange darken-4 center-align">Projects</h3>
+          <h3 class="center-align">Production</h3>
         </div>
         <div class="project-container">
         </div>
@@ -62,4 +83,5 @@
     </div>
   </script>
 </body>
+
 </html>
