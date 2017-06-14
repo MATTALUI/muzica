@@ -88,9 +88,7 @@ router.post('/createuser', (req, res, next) => {
 });
 
 router.get('/logout',(req,res,next)=>{
-  // console.log(req.cookies.token)
-  res.cookie('token', '');
-  // console.log("after delete", req.cookies.token)
+  res.clearCookie('token');
   res.send(true)
 })
 

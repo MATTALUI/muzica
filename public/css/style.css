@@ -57,7 +57,7 @@
   background-position: top;
 }
 .login-box {
-  opacity: .85;
+  opacity: .95;
   background-color: #424242;
   height: 550px;
   width: 800px;
@@ -150,14 +150,14 @@ h1 {
 
 .button:hover {
 	transition: all 60ms ease;
-	opacity: .85;
+	opacity: .95;
 }
 
 .button:active {
 	text-decoration: none;
 	transition: all 60ms ease;
 	transform: scale(0.97);
-	opacity: .75;
+	opacity: .95;
 }
 
 .button:visited {
@@ -400,7 +400,7 @@ body {
   text: 1rem;
 }
 
-.title:after {
+/*.title:after {
   background: #e65100;
     content: "";
     height: 8px;
@@ -411,7 +411,7 @@ body {
     text-align: center;
     top: 30px;
     width: 94px;
-}
+}*/
 
 #logo {
   transition: transform 0.5s;
@@ -441,7 +441,7 @@ body {
   justify-content: center;
   list-style: none;
   padding-bottom: 30px;
-  opacity: 97%;
+  opacity: 95%;
 }
 
 .team-item {
