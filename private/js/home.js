@@ -43,7 +43,7 @@ function makeCards(array){
 $('body').on('click', '.delete-project', () => {
   var projectId = ($(event.target).closest('.exmaple-commit').attr('id'));
   $.ajax({
-    type: "DELET",
+    type: "DELETE",
     url: "projects",
     data: {projectId},
     success: function(res){
