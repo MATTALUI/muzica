@@ -8,19 +8,18 @@ const jwt = require('jsonwebtoken');
 
 router.get('/', function(req,res,next){
 
-  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
-  // // this was just to generate a testing token
+  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4'
+  // this was just to generate a testing token
   // let aToken = jwt.sign({
   //   id: 1,
   //   first_name: 'Matt',
   //   last_name: 'Hummer',
   //   email: 'cats@cats.com',
   //   hashed_password: '$2a$08$Kb7JzChJiBv9de6t9NB6V.QKi.w87WD/3gv3PxEH4iAKrNNhbLbjW',
-  //   sc_username: 'mattalui'
+  //   sc_username: 'helloworldhello'
   // }, 'secret')
   // console.log('token: ',aToken);
   jwt.verify(token, 'secret', function(err, value){
-    console.log(err);
     if(err){
       res.send('token doesnt match');
     }else{
@@ -48,7 +47,7 @@ router.get('/:id', function(req, res, next){
 });
 router.post('/', function(req, res, next){
     try{
-    let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
+    let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4'
     jwt.verify(token, 'secret', function(err, userInfo){
       if(err){
         res.send('you do not have access');
@@ -74,12 +73,11 @@ router.post('/', function(req, res, next){
 });
 router.post('/commit', function(req, res, next){
   try{
-  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
+  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4'
   jwt.verify(token, 'secret', function(err, userInfo){
     if(err){
       res.send('you do not have access');
     }else{
-      console.log(userInfo);
       var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
       let needed = {
         project_id: req.body.projectId,
@@ -88,6 +86,18 @@ router.post('/commit', function(req, res, next){
         widget_url: `${widgeturl}${userInfo.sc_username}/${req.body.track}`,
         is_master: req.body.is_master
       }
+      if(req.body.is_master == 'true' || req.body.is_master == true){
+        res.send('it\'s master. reset, then insert');
+      }else{
+        knex('commits')
+        .insert(needed)
+        .returning('*')
+        .then(function(addedCommit){
+          res.send(addedCommit);
+        });
+      }
+
+
       // knex()
       // .update('is_master', false)
       // .where('project_id', req.body.projectId)
@@ -100,14 +110,6 @@ router.post('/commit', function(req, res, next){
       //     res.send(addedCommit);
       //   });
       // });
-      knex('commits')
-      .insert(needed)
-      .returning('*')
-      .then(function(addedCommit){
-        res.send(addedCommit);
-      });
-
-      // res.send(needed);
     }
   });
 }
