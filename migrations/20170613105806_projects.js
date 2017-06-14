@@ -3,7 +3,8 @@ exports.up = function(knex, Promise) {
   table.increments('id');
   table.integer('project_owner').index().references('users.id').notNullable();
   table.string('project_title').notNullable().defaultTo('');
-  
+  table.text('project_description').notNullable().defaultTo('A muzica project');
+
 });
 
 };
