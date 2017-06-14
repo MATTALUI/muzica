@@ -21,7 +21,7 @@ nav{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Roland_TR-808_%28large%29.jpg");
   width: 100%;
   background-size: 100% 100%;
-  background-position: center;
+  background-position: top;
 }
 
 .card{
