@@ -37,13 +37,17 @@
     <div class="nav-wrapper container">
       <!-- <a src="" id="logo-container" href="#" class="brand-logo"></a> -->
       <a class="center brand-logo" src="" href="/home.html">Muzica</a>
+      <ul class="left hide-on-med-and-down">
+        <li>Shhhhh... You're in the Library!</li>
+      </ul>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Team Muzica</a></li>
+        <li><a href="/bio.html">Team Muzica</a></li>
         <li class="active"><a href="/home.html">Library</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Production
             <i class="material-icons right">arrow_drop_down</i>
           </a></li>
         <li><a class="logout_button" href="#">Log Out</a></li>
+
       </ul>
       <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="orange darken-4 side-nav">
@@ -64,8 +68,41 @@
     <div class="row">
       <div class="orange-text text-darken-4 col s10 offset-s1 m8 offset-m2 project-history">
         <div class="title">
-          <h3 class="center-align">Shhhhh.. You're in the Library!</h3>
+          <br>
+          <!-- <h3 class="center-align">Shhhhh.. You're in the Library!</h3> -->
         </div>
+
+        <div id="newprojectbutton">
+          <a href="#0" id="modal-button" class="button good">New Project</a>
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+
+            <div class="modal-content slideDown">
+
+              <div class="modal-header">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>New Project</h2>
+              </div>
+            <div class="modal-body">
+              <form action="" class="modal-form">
+                <div class="form-row">
+                  <label for="">Project Title</label>
+                  <input id="new_project_title" type="text">
+                </div>
+                <div class="form-row">
+                  <label for="">Description</label>
+                  <input id="new_project_description" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <input id="save_project_button" type="submit" class="button good" value="Save">
+            </div>
+            </form>
+            </div>
+          </div>
+        </div>
+
         <div class="project-container">
         </div>
       </div>
@@ -79,10 +116,13 @@
         <a class="btn-floating halfway-fab waves-effect waves-light red" href="production.html?id={{id}}"><i class="material-icons">add</i></a>
       </div>
       <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <p>{{comment}}</p>
       </div>
     </div>
   </script>
+  <!-- <div class="controls"> -->
+
+
 </body>
 
 </html>

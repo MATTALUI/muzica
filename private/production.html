@@ -34,23 +34,23 @@
       <!-- <a src="" id="logo-container" href="" class="brand-logo"></a> -->
       <a class="center brand-logo" src ="" href="/home.html">Muzica</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Team Muzica</a></li>
+        <li><a href="">Team Muzica</a></li>
         <li><a href="/home.html">Library</a></li>
-        <li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Production
+        <li class="active"><a class="dropdown-button" href="" data-activates="dropdown1">Production
           <i class="material-icons right">arrow_drop_down</i>
         </a></li>
-        <li><a class="logout_button" href="#">Log Out</a></li>
+        <li><a class="logout_button" href="">Log Out</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
+      <a href="" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="orange darken-4 side-nav">
         <li>
-          <li><a href="#">About</a></li>
+          <li><a href="">About</a></li>
           <li><a href="/home.html">Library</a></li>
-          <li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown3">Production
+          <li class="active"><a class="dropdown-button" href="" data-activates="dropdown3">Production
             <i class="material-icons right">arrow_drop_down</i>
           </a></li>
           <li class="divider"></li>
-          <li class="logout_button"><a href="#">Log Out</a></li>
+          <li class="logout_button"><a href="">Log Out</a></li>
         </li>
       </ul>
     </div>
@@ -89,10 +89,21 @@
                 <label for="soundNotes">Sound Notes</label>
               </div>
             </div>
+            <div class="row">
+              Do you want to make this track the new master?
+              <p>
+                <input name="group1" type="radio" id="true" unchecked/>
+                <label for="true">Yes</label>
+              </p>
+              <p>
+                <input name="group1" type="radio" id="false" checked/>
+                <label for="false">No</label>
+              </p>
+            </div>
           </form>
         </div>
         <div class="modal-footer commit-form">
-          <a class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
+          <a class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Add Commit</a>
         </div>
       </div>
       <div class="waves-effect waves-light orange darken-4 btn-large new-commit" data-target="commit-modal">
@@ -106,11 +117,9 @@
       <div id="playerContainer1" class="playerOuter">
         <iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="{{widget_url}}"></iframe>
       </div>
-      <span class="card-title">Card Title</span>
-      <span class="commit-by">WIP added by {{submitter}}</span>
-      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <span class="card-title commit-by"> Added by {{submitter}}</span>
       <div class="card-content">
-        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+        <p>{{comments}}</p>
       </div>
     </div>
   </script>
