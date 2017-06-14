@@ -77,14 +77,17 @@ router.post('/commit', function(req, res, next){
     if(err){
       res.send('you do not have access');
     }else{
-    let needed = {
-      project_id: '',
-      submitted_by: userInfo.id,
-      widget_url: '',
-      is_master: false
-    }
+      console.log(userInfo);
+      var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
+      let needed = {
+        project_id: req.body.projectId,
+        comment: req.body.comment,
+        submitted_by: userInfo.id,
+        widget_url: `${widgeturl}${userInfo.sc_username}/${req.body.track}`,
+        is_master: false
+      }
 
-    res.send(needed);
+      res.send(needed);
     }
   });
 }
