@@ -83,13 +83,31 @@ router.post('/commit', function(req, res, next){
       var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
       let needed = {
         project_id: req.body.projectId,
-        comment: req.body.comment,
+        commit_comment: req.body.comment,
         submitted_by: userInfo.id,
         widget_url: `${widgeturl}${userInfo.sc_username}/${req.body.track}`,
-        is_master: false
+        is_master: req.body.is_master
       }
+      // knex()
+      // .update('is_master', false)
+      // .where('project_id', req.body.projectId)
+      // .where('is_master', true)
+      // .then(function(){
+      //   knex('commits')
+      //   .insert(needed)
+      //   .returning('*')
+      //   .then(function(addedCommit){
+      //     res.send(addedCommit);
+      //   });
+      // });
+      knex('commits')
+      .insert(needed)
+      .returning('*')
+      .then(function(addedCommit){
+        res.send(addedCommit);
+      });
 
-      res.send(needed);
+      // res.send(needed);
     }
   });
 }
