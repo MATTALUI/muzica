@@ -43,13 +43,13 @@ function addCommit(){
     var comment = $('#soundNotes').val();
     var isMaster = $('input[id=true]').is(':checked');
     var projectId = getUrlVars().id;
-
     var dataObj={
       track:track,
       comment:comment,
       projectId: projectId,
       is_master: isMaster
     }
+    
     dataObj={
       track:'',
       comment: '',
