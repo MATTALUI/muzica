@@ -17,27 +17,16 @@ function makeCards(array){
 }
 
 $('.logout_button').on('click', () => {
-  // console.log("123");
-  let email = $("#email").val();
-  let password = $("#password").val();
-  if(title==''||description==''){
-    return
-  }
-  console.log(title,description)
+  console.log("start");
   $.ajax({
-    type: "POST",
-    url: "/users/login",
-    data: {
-      email: email,
-      password: pass
-    },
+    type: "GET",
+    url: "/users/logout",
     success: function(res){
-        // console.log(res);
-        if (res==true){
-          console.log(res);
-          window.location.replace('../home.html')
+        if (res){
+          console.log("retrun of logout button", res);
+          window.location.replace('/')
         } else{
-          console.log('Incorrect email or password');
+          console.log('Error');
         }
     }
   })
