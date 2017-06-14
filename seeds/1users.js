@@ -19,8 +19,8 @@ exports.seed = function(knex, Promise) {
       hashed_password: '$2a$08$Kb7JzChJiBv9de6t9NB6V.QKi.w87WD/3gv3PxEH4iAKrNNhbLbjW',
       sc_username: 'smitty14'
     }]);
-    })
-    .then(function(){
+
+  }).then(function(){
       return knex.raw("SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));");
     });
 };
