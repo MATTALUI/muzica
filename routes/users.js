@@ -87,10 +87,10 @@ router.post('/createuser', (req, res, next) => {
 });
 
 router.get('/logout',(req,res,next)=>{
-  console.log(req.cookies.token)
-  req.cookies.token = ''
-  console.log("after delete", req.cookies.token)
-  res.send('Logged Out')
+  // console.log(req.cookies.token)
+  res.cookie('token', '');
+  // console.log("after delete", req.cookies.token)
+  res.send(true)
 })
 
 module.exports = router;

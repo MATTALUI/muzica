@@ -56,8 +56,8 @@ $('#logout_button').on('click', () => {
     success: function(res){
         // console.log(res);
         if (res){
-          console.log(res);
-          window.location.replace('../')
+          console.log("retrun of logout button", res);
+          window.location.replace('/')
         } else{
           console.log('Error');
         }
