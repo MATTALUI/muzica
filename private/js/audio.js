@@ -41,7 +41,7 @@ function addCommit(){
     var comment = $('#soundNotes').val();
     var projectId = getUrlVars().id;
     var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
-    var dataObj{
+    var dataObj={
       track:track,
       comment:comment,
       projectId: projectId,
