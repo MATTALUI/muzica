@@ -74,10 +74,34 @@ $(document).ready(function(){
   $.get(`projects/${projectId}`, function(response){
     makeCards(response);
   })
+  $.get('projects', function(response){
+      makeDropdown(response)
+  });
   addCommit();
 });
 
-
+function makeDropdown(array){
+  var dropdown1 = document.getElementById('dropdown1')
+  var dropdown3 = document.getElementById('dropdown3')
+  array.map((ele,index,arr)=>{
+    console.log(ele);
+    var li = document.createElement('li')
+    var anchor = document.createElement('a')
+    anchor.setAttribute('href',('/production.html?id='+ele.id))
+    anchor.innerHTML = ele.project_title
+    $(dropdown1).append(li);
+    $(li).append(anchor);
+    })
+    return array.map((ele,index,arr)=>{
+      console.log(ele);
+      var li = document.createElement('li')
+      var anchor = document.createElement('a')
+      anchor.setAttribute('href',('/production.html?id='+ele.id))
+      anchor.innerHTML = ele.project_title
+      $(dropdown3).append(li);
+      $(li).append(anchor);
+      })
+}
 
 $('#logout_button').on('click', () => {
   console.log("start");
