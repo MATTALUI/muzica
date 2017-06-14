@@ -36,6 +36,6 @@ exports.seed = function(knex, Promise) {
       commit_comment: 'lil yachty is my homie!1!!1'
     }]);
     }).then(function(){
-      return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM users));");
+      return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM commits));");
     });
 };

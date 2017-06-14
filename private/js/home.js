@@ -23,14 +23,36 @@ $('.logout_button').on('click', () => {
     type: "GET",
     url: "/users/logout",
     success: function(res){
-        console.log("return of logout button",res);
-        if (res===true){
-          // console.log(req.cookies.token);
-          // console.log("retrun of logout button", res);
+        if (res){
+          console.log("retrun of logout button", res);
           window.location.replace('/')
         } else{
           console.log('Error');
         }
+    }
+  })
+});
+
+$('#save_project_button').on('click', () => {
+  let title = $("#new_project_title").val();
+  let description = $("#new_project_description").val();
+  console.log(title,description);
+  $.ajax({
+    type: "POST",
+    url: "/projects",
+    data: {
+      projectTitle: title,
+      projectDescription: description
+    },
+    success: function(res){
+        console.log("return of new project button button",res);
+        // if (res===true){
+        //   // console.log(req.cookies.token);
+        //   // console.log("retrun of logout button", res);
+        //   window.location.replace('/')
+        // } else{
+        //   console.log('Error');
+        // }
     }
   })
 });
