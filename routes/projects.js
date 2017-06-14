@@ -70,6 +70,31 @@ router.post('/', function(req, res, next){
   catch(err){
   }
 });
+router.post('/commit', function(req, res, next){
+  try{
+  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6Im1hdHRhbHVpIiwiaWF0IjoxNDk3Mzc5NjQ0fQ.O8AU4EmC3fV9Au2hZFNe-VR5VYz1HbtsR4FQevBph-8'
+  jwt.verify(token, 'secret', function(err, userInfo){
+    if(err){
+      res.send('you do not have access');
+    }else{
+      console.log(userInfo);
+      var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
+      let needed = {
+        project_id: req.body.projectId,
+        comment: req.body.comment,
+        submitted_by: userInfo.id,
+        widget_url: `${widgeturl}${userInfo.sc_username}/${req.body.track}`,
+        is_master: false
+      }
+
+      res.send(needed);
+    }
+  });
+}
+catch(err){
+}
+
+});
 
 
 

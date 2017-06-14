@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
   table.integer('submitted_by').index().references('users.id').notNullable();
   table.string('widget_url').notNullable().default('https://w.soundcloud.com/player/?url=https://soundcloud.com/zoeybloons/jump-to-lightspeed');
   table.boolean('is_master').notNullable().defaultTo(false);
+  table.text('commit_comment').notNullable().defaultTo('Look at this.');
 });
 
 };
