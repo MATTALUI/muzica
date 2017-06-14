@@ -10,13 +10,14 @@ const saltRounds = 8;
 
 
 router.post('/login', (req, res, next) => {
-  // console.log(req.body);
+  console.log(req.body);
   // console.log('line12');
   knex('users')
     .select('*')
     .where('email', req.body.email)
     .first()
     .then(function(user) {
+      console.log(user);
       console.log("search result from db",user);
       if (Object.keys(user).length === undefined) {
         res.setHeader('Content-Type', 'text/plain');
