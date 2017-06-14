@@ -128,7 +128,6 @@ router.post('/commit', function(req, res, next){
 router.patch('', function(req,res,next){
   let id = req.body.projectId;
   delete req.body.projectId;
-  console.log(req.body);
   knex('projects')
   .update(req.body)
   .where('id', id)
@@ -136,6 +135,32 @@ router.patch('', function(req,res,next){
   .then(function(changed){
     res.send(changed)
   })
+});
+router.delete('/', function(req, res, next){
+  try{
+
+    let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4'
+    jwt.verify(token, 'secret', function(err, userInfo){
+      if (err){
+        res.send('you do not have permission')
+      }else{
+          knex('projects')
+          .del()
+          .where('id', req.body.projectId)
+          .then(function(){
+            knex('projects')
+            .where('project_owner', userInfo.id)
+            .then(function(projects){
+              res.send(projects);
+            });
+          });
+      }
+
+    });
+
+  }catch(err){
+  }
+
 });
 
 
