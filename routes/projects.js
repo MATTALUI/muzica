@@ -41,7 +41,7 @@ router.get('/:id', function(req, res, next){
   knex('commits')
   .where('project_id', req.params.id)
   .join('users', 'commits.submitted_by','=','users.id')
-  .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username'])
+  .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
   .then(function(commits){
     res.send(commits);
   });
@@ -57,7 +57,7 @@ router.post('/', function(req, res, next){
         project_owner: userInfo.id,
         project_title: req.body.projectTitle,
         project_description: req.body.projectDescription
-        
+
       }
       knex('projects')
       .insert(needed)
