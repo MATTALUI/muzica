@@ -17,19 +17,46 @@ function makeCards(array){
 }
 
 $('.logout_button').on('click', () => {
+  // console.log("123");
+  let title = $("#new_project_title").val();
+  let description = $("#new_project_description").val();
+  if(title==''||description==''){
+    return
+  }
+  console.log(title,description)
+  $.ajax({
+    type: "POST",
+    url: "/projects",
+    data: {
+      projectTitle: title,
+      projectDescription: description
+    },
+    success: function(res){
+        console.log(res);
+        // if (res==true){
+        //   console.log(res);
+        //   window.location.replace('../home.html')
+        // } else{
+        //   console.log('Incorrect email or password');
+        // }
+    }
+  })
+});
+
+$('#save_project_button').on('click', () => {
   console.log("start");
   $.ajax({
-    type: "GET",
-    url: "/users/logout",
+    type: "POST",
+    url: "/projects",
     success: function(res){
-        console.log("return of logout button",res);
-        if (res===true){
-          // console.log(req.cookies.token);
-          // console.log("retrun of logout button", res);
-          window.location.replace('/')
-        } else{
-          console.log('Error');
-        }
+        console.log("return of new project button",res);
+        // if (res===true){
+        //   // console.log(req.cookies.token);
+        //   // console.log("retrun of logout button", res);
+        //   window.location.replace('/')
+        // } else{
+        //   console.log('Error');
+        // }
     }
   })
 });

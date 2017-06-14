@@ -38,7 +38,7 @@
       <!-- <a src="" id="logo-container" href="#" class="brand-logo"></a> -->
       <a class="center brand-logo" src="" href="/home.html">Muzica</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Team Muzica</a></li>
+        <li><a href="/bio.html">Team Muzica</a></li>
         <li class="active"><a href="/home.html">Library</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Production
             <i class="material-icons right">arrow_drop_down</i>
@@ -66,6 +66,38 @@
         <div class="title">
           <h3 class="center-align">Shhhhh.. You're in the Library!</h3>
         </div>
+
+        <div id="newprojectbutton">
+          <a href="#0" id="modal-button" class="button good">New Project</a>
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+
+            <div class="modal-content slideDown">
+
+              <div class="modal-header">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>New Project</h2>
+              </div>
+            <div class="modal-body">
+              <form action="" class="modal-form">
+                <div class="form-row">
+                  <label for="">Project Title</label>
+                  <input id="new_project_title" type="text">
+                </div>
+                <div class="form-row">
+                  <label for="">Description</label>
+                  <input id="new_project_description" type="text">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <input id="save_project_button" type="submit" class="button good" value="Save">
+            </div>
+            </form>
+            </div>
+          </div>
+        </div>
+
         <div class="project-container">
         </div>
       </div>
@@ -83,6 +115,9 @@
       </div>
     </div>
   </script>
+  <!-- <div class="controls"> -->
+
+
 </body>
 
 </html>
