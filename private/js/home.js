@@ -9,7 +9,6 @@ function makeDropdown(array){
   var dropdown1 = document.getElementById('dropdown1')
   var dropdown3 = document.getElementById('dropdown3')
   array.map((ele,index,arr)=>{
-    console.log(ele);
     var li = document.createElement('li')
     var anchor = document.createElement('a')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
@@ -18,7 +17,6 @@ function makeDropdown(array){
     $(li).append(anchor);
     })
     return array.map((ele,index,arr)=>{
-      console.log(ele);
       var li = document.createElement('li')
       var anchor = document.createElement('a')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
@@ -29,6 +27,7 @@ function makeDropdown(array){
 }
 
 function makeCards(array){
+  $('.project-container').empty();
   for (var i = 0; i < array.length; i++){
     var projectId = array[i].id;
     var projectTitle = array[i].project_title;
@@ -41,8 +40,19 @@ function makeCards(array){
   }
 }
 
+$('body').on('click', '.delete-project', () => {
+  var projectId = ($(event.target).closest('.exmaple-commit').attr('id'));
+  $.ajax({
+    type: "DELET",
+    url: "projects",
+    data: {projectId},
+    success: function(res){
+      makeCards(res);
+    }
+  });
+});
+
 $('.logout_button').on('click', () => {
-  console.log("start");
   $.ajax({
     type: "GET",
     url: "/users/logout",
