@@ -78,10 +78,13 @@ router.post('/commit', function(req, res, next){
       res.send('you do not have access');
     }else{
     let needed = {
-
+      project_id: '',
+      submitted_by: userInfo.id,
+      widget_url: '',
+      is_master: false
     }
 
-    res.send('alls well');
+    res.send(needed);
     }
   });
 }
