@@ -1,8 +1,32 @@
 $(document).ready(function(){
   $.get('projects', function(response){
       makeCards(response);
+      makeDropdown(response)
   });
 });
+
+function makeDropdown(array){
+  var dropdown1 = document.getElementById('dropdown1')
+  var dropdown3 = document.getElementById('dropdown3')
+  array.map((ele,index,arr)=>{
+    console.log(ele);
+    var li = document.createElement('li')
+    var anchor = document.createElement('a')
+    anchor.setAttribute('href',('/production.html?id='+ele.id))
+    anchor.innerHTML = ele.project_title
+    $(dropdown1).append(li);
+    $(li).append(anchor);
+    })
+    return array.map((ele,index,arr)=>{
+      console.log(ele);
+      var li = document.createElement('li')
+      var anchor = document.createElement('a')
+      anchor.setAttribute('href',('/production.html?id='+ele.id))
+      anchor.innerHTML = ele.project_title
+      $(dropdown3).append(li);
+      $(li).append(anchor);
+      })
+}
 
 function makeCards(array){
   for (var i = 0; i < array.length; i++){
