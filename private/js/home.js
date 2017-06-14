@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $.get('http://localhost:8000/projects', function(response){
+  $.get('projects', function(response){
       makeCards(response);
   });
 });
@@ -15,3 +15,21 @@ function makeCards(array){
     $('.project-container').prepend(html);
   }
 }
+
+$('.logout_button').on('click', () => {
+  console.log("start");
+  $.ajax({
+    type: "GET",
+    url: "/users/logout",
+    success: function(res){
+        console.log("return of logout button",res);
+        if (res===true){
+          // console.log(req.cookies.token);
+          // console.log("retrun of logout button", res);
+          window.location.replace('/')
+        } else{
+          console.log('Error');
+        }
+    }
+  })
+});

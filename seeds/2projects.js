@@ -14,8 +14,8 @@ exports.seed = function(knex, Promise) {
         project_owner: 2,
         project_title: 'AtomBomb'
       }]);
-    })
-    // .then(function(){
-    //   return knex.raw("SELECT setval('projects_id_seq', (SELECT MAX(id) FROM users));");
-    // });
+
+    }).then(function(){
+      return knex.raw("SELECT setval('projects_id_seq', (SELECT MAX(id) FROM users));");
+    });
 };

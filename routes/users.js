@@ -11,20 +11,21 @@ const saltRounds = 8;
 
 router.post('/login', (req, res, next) => {
   console.log(req.body);
-  console.log('line12');
+  // console.log('line12');
   knex('users')
     .select('*')
     .where('email', req.body.email)
     .first()
     .then(function(user) {
-      // console.log(user);
-      if (user.length === 0) {
+      console.log(user);
+      console.log("search result from db",user);
+      if (Object.keys(user).length === undefined) {
         res.setHeader('Content-Type', 'text/plain');
-        alert("Incorrect email or password");
+        res.send("Incorrect email or password");
       } else {
         bcrypt.compare(req.body.password, user.hashed_password, function(err, decode) {
-          console.log(decode);
-          console.log('line25');
+          // console.log(decode);
+          // console.log('line25');
           if (err) {
             return res.send('Invalid email or password')
           } else if (decode===true){
@@ -41,13 +42,14 @@ router.post('/login', (req, res, next) => {
             //   .where('user_id', 'user.id')
             //   .then(projects => {
             //     console.log(projects);
-
-                res.send(true)
+            // console.log("ready to redirect");
+              // return res.redirect('../home.html')
+                return res.send(true)
 
             //     // res.sendFile(path.join( __dirname+'/home.html'));
             //   })
           }else{
-            res.send(false)
+            return res.send(false)
           }
         });
       }
@@ -55,13 +57,14 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/createuser', (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   knex('users')
     .select('*')
     .where('email', req.body.email)
     .then(function(user) {
-      console.log(user);
-      if (user.length > 0) {
+      // console.log(user);
+      if (Object.keys(user).length > 0) {
+        console.log("line 66 email already exists");
         res.setHeader('Content-Type', 'text/plain');
         return res.send("Invalid email, already taken");
       } else {
@@ -75,14 +78,20 @@ router.post('/createuser', (req, res, next) => {
               .returning('*')
               .insert(req.body)
               .then(new_user=>{
-                res.send(new_user)
+                console.log(new_user);
+                return res.send(new_user)
               })
-            // res.send(req.body)
           }
         });
       }
     });
 });
 
+router.get('/logout',(req,res,next)=>{
+  // console.log(req.cookies.token)
+  res.cookie('token', '');
+  // console.log("after delete", req.cookies.token)
+  res.send(true)
+})
 
 module.exports = router;

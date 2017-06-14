@@ -21,7 +21,7 @@ const closeModal = function() {
 		modal.style.display = "none"
 	}
 	//event listeners
-button.addEventListener('click', openModal, false)
+// button.addEventListener('click', openModal, false)
 close.addEventListener('click', closeModal, false)
 for (let i = 0; i < clickable.length; i++) {
 	clickable[i].addEventListener('click', openModal, false)
