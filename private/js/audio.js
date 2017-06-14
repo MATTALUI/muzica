@@ -38,6 +38,7 @@ function setIframe(username, track){
 function addCommit(){
   $('.add-commit').on('click', function(){
     var track = $('#track').val();
+    track = track.replace(/\s+/g, '-').toLowerCase()
     var comment = $('#soundNotes').val();
     var projectId = getUrlVars().id;
     var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
@@ -45,7 +46,7 @@ function addCommit(){
       track:track,
       comment:comment,
       projectId: projectId,
-      widgeturl: widget_url
+      widgeturl: widgeturl
     }
   });
 }
@@ -53,7 +54,6 @@ function addCommit(){
 $(document).ready(function(){
   var projectId = getUrlVars().id;
   $.get(`projects/${projectId}`, function(response){
-    console.log(response);
     makeCards(response);
   })
   addCommit();
@@ -67,7 +67,6 @@ $('.logout_button').on('click', () => {
     type: "GET",
     url: "/users/logout",
     success: function(res){
-        // console.log(res);
         if (res){
           console.log("retrun of logout button", res);
           window.location.replace('/')
