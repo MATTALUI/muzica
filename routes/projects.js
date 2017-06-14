@@ -57,6 +57,7 @@ router.post('/', function(req, res, next){
         project_owner: userInfo.id,
         project_title: req.body.projectTitle,
         project_description: req.body.projectDescription
+        
       }
       knex('projects')
       .insert(needed)
