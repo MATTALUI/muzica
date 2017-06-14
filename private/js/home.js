@@ -18,12 +18,35 @@ function makeCards(array){
 
 $('.logout_button').on('click', () => {
   // console.log("123");
-  let title = $("#new_project_title").val();
-  let description = $("#new_project_description").val();
+  let email = $("#email").val();
+  let password = $("#password").val();
   if(title==''||description==''){
     return
   }
   console.log(title,description)
+  $.ajax({
+    type: "POST",
+    url: "/users/login",
+    data: {
+      email: email,
+      password: pass
+    },
+    success: function(res){
+        // console.log(res);
+        if (res==true){
+          console.log(res);
+          window.location.replace('../home.html')
+        } else{
+          console.log('Incorrect email or password');
+        }
+    }
+  })
+});
+
+$('#save_project_button').on('click', () => {
+  let title = $("#new_project_title").val();
+  let description = $("#new_project_description").val();
+  console.log(title,description);
   $.ajax({
     type: "POST",
     url: "/projects",
@@ -32,24 +55,7 @@ $('.logout_button').on('click', () => {
       projectDescription: description
     },
     success: function(res){
-        console.log(res);
-        // if (res==true){
-        //   console.log(res);
-        //   window.location.replace('../home.html')
-        // } else{
-        //   console.log('Incorrect email or password');
-        // }
-    }
-  })
-});
-
-$('#save_project_button').on('click', () => {
-  console.log("start");
-  $.ajax({
-    type: "POST",
-    url: "/projects",
-    success: function(res){
-        console.log("return of new project button",res);
+        console.log("return of new project button button",res);
         // if (res===true){
         //   // console.log(req.cookies.token);
         //   // console.log("retrun of logout button", res);
