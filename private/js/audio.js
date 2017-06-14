@@ -16,15 +16,15 @@ function makeCards(array){
   for (var i = 0; i < array.length; i++){
     var widgetSrc = array[i].widget_url;
     var SubmittedBy = array[i].first_name + " " + array[i].last_name;
-    var comment = array[i].comments;
+    var comment = array[i].commit_comment;
     var source = $("#Commit").html();
     var template = Handlebars.compile(source);
     var context = {submitter: SubmittedBy, widget_url: widgetSrc, comments: comment};
     var html= template(context);
     if(array[i].is_master){
-      $('.master-container').prepend(html);
+      $('.master-container').append(html);
     }else{
-      $('.card-container').prepend(html);
+      $('.card-container').append(html);
     }
   }
 }
