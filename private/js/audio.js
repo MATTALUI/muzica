@@ -48,14 +48,12 @@ function addCommit(){
       track:track,
       comment:comment,
       projectId: projectId,
-      widgeturl: widgeturl,
       is_master: isMaster
     }
     dataObj={
       track:'',
       comment: '',
       projectId: '',
-      widgeturl: '',
       is_master: ''
     }
     clearForm();
