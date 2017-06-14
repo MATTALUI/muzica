@@ -120,13 +120,23 @@ router.post('/commit', function(req, res, next){
       }
     }
   });
-}
-catch(err){
-}
+  }
+    catch(err){
+    }
 
 });
-
-
+router.patch('', function(req,res,next){
+  let id = req.body.projectId;
+  delete req.body.projectId;
+  console.log(req.body);
+  knex('projects')
+  .update(req.body)
+  .where('id', id)
+  .returning('*')
+  .then(function(changed){
+    res.send(changed)
+  })
+});
 
 
 
