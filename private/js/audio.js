@@ -36,17 +36,30 @@ function setIframe(username, track){
 }
 
 function addCommit(){
-  var $newCom = $('.example-master').clone();
-  $newCom.prependTo('.card-container');
+  $('.add-commit').on('click', function(){
+    var track = $('#track').val();
+    var comment = $('#soundNotes').val();
+    var projectId = getUrlVars().id;
+    var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
+    var dataObj{
+      track:track,
+      comment:comment,
+      projectId: projectId,
+      widgeturl: widget_url
+    }
+  });
 }
 
 $(document).ready(function(){
   var projectId = getUrlVars().id;
-  $.get(`http://localhost:8000/projects/${projectId}`, function(response){
+  $.get(`projects/${projectId}`, function(response){
+    console.log(response);
     makeCards(response);
   })
-  $('.example-master').children('iframe').attr('src',""+ setIframe('jahseh-onfroy', 'garettes-revenge-produced')+"");
+  addCommit();
 });
+
+
 
 $('#logout_button').on('click', () => {
   console.log("start");
