@@ -446,8 +446,8 @@ body {
 
 .team-item {
   margin: 10px;
-  width: 400px;
-  height: 400px;
+  width: 338px;
+  height: 338px;
   margin-top: 10px;
   text-align: center;
   position: relative;
@@ -456,8 +456,8 @@ body {
 
 .team-item img {
   border-radius: 2px;
-  width: 400px;
-  height: 400px;
+  width: 338px;
+  height: 338px;
 }
 
 .team-info {
@@ -471,8 +471,8 @@ body {
 
 .overlay {
   background: #e65100;
-  width: 400px;
-  height: 400px;
+  width: 338px;
+  height: 338px;
   position: absolute;
   text-align: center;
   top: 0;
