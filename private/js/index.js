@@ -7,6 +7,7 @@
 })(jQuery); // end of jQuery name space
 
 
+
 // get the elements
 const modal = document.getElementById('myModal');
 const button = document.getElementById("modal-button");

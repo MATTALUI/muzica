@@ -12,26 +12,26 @@
   <!--jquery-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" defer></script>
-  <script src="https://cdn.rawgit.com/darrena092/AudioPlayer.js/master/AudioPlayer.js" charset="utf-8"defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js" defer></script>
   <script src="js/index.js" charset="utf-8" defer></script>
   <script src="js/audio.js" charset="utf-8" defer></script>
 </head>
-<body class= "background-gradient orange darken-4">
+<body class="orange darken-4">
   <nav class="grey darken-3" role="navigation">
     <div class="nav-wrapper container">
-      <a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
+      <a src="" id="logo-container" href="#" class="brand-logo"></a>
       <a class="center brand-logo" src ="" href="#">Project Title</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Production</a></li>
-        <li><a href="#">Log In</a></li>
-        <li><a href="#">Create Account</a></li>
+        <li><a id="home_button" href="#">Home</a></li>
+        <!-- <li><a href="#">Production</a></li> -->
+        <li><a id="logout_button" href="#">Log Out</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="side-nav">
+      <ul id="nav-mobile" class="grey darken 3 side-nav">
         <li>
-          <a href="#">Build amazing things
-          npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways.</a>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Production</a></li>
+          <li><a href="#">Log Out</a></li>
         </li>
       </ul>
     </div>
@@ -41,31 +41,17 @@
       <div class="col s12 m6 big-boi">
         <!--Master MP3-->
         <div class="title">
-          <h4 class="center-align">Master Copy</h4>
+          <h3 class="orange darken-4 center-align">Master</h3>
         </div>
-        <div class="card example-master">
-          <iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no"></iframe>
-          <span class="card-title">Card Title</span>
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-          <div class="card-content">
-            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-          </div>
+        <div class="master-container">
         </div>
       </div>
       <div class="col s12 m6 commit-history">
         <!--history of Commmits-->
         <div class="title">
-          <h4 class="center-align">Commit History</h4>
+          <h3 class="orange darken-4 center-align">Work In Progress</h3>
         </div>
         <div class="card-container col s12">
-          <div class="card exmaple-commit-1">
-            <div id="playerContainer1" class="playerOuter"></div>
-            <span class="card-title">Card Title</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-          </div>
         </div>
       </div><!--commit column-->
       <div id="commit-modal" class="modal modal-fixed-footer commit-form">
@@ -87,7 +73,7 @@
           </form>
         </div>
         <div class="modal-footer commit-form">
-          <a href="#!" class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
+          <a class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
         </div>
       </div>
       <div class="waves-effect waves-light orange darken-4 btn-large new-commit" data-target="commit-modal">
@@ -95,5 +81,19 @@
       </div>
     </div>
   </div>
+
+  <script id="Commit" type="text/x-handlebars-template">
+    <div class="card exmaple-commit">
+      <div id="playerContainer1" class="playerOuter">
+        <iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="{{widget_url}}"></iframe>
+      </div>
+      <span class="card-title">Card Title</span>
+      <span class="commit-by">WIP added by {{submitter}}</span>
+      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Muzica</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!--jquery-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js" defer></script>
+  <script src="js/index.js" charset="utf-8" defer></script>
+  <script src="js/home.js" charset="utf-8" defer></script>
+</head>
+
+
+<body class= "orange darken-4 footer-808">
+  <nav class="grey darken-3" role="navigation">
+    <div id='nav' class="nav-wrapper container"><a src="" id="logo-container" href="#" class="brand-logo">Muzica</a>
+      <ul class="right hide-on-med-and-down">
+        <!-- <li><a href="#">Home</a></li> -->
+        <!-- <li><a href="#">Production</a></li> -->
+        <li id="logout_button"><a href="#">Log Out</a></li>
+      </ul>
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">This is where our list of links live just need to add more li's</a></li>
+
+        <li><a href="#">Build amazing things
+          npm is the package manager for JavaScript and the world’s largest software registry. Discover packages of reusable code — and assemble them in powerful new ways.</a>
+        </li>
+
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="main-body">
+    <div class="row">
+      <div class="orange darken-4 col s10 offset-s1 m8 offset-m2 project-history">
+        <div class="title">
+          <h3 class="orange darken-4 center-align">Projects</h3>
+        </div>
+        <div class="project-container">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script id="Project" type="text/x-handlebars-template">
+    <div class="card exmaple-commit">
+      <div class="card-image">
+        <h3>{{title}}</h3>
+        <a class="btn-floating halfway-fab waves-effect waves-light red" href="production.html?id={{id}}"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      </div>
+    </div>
+  </script>
+</body>
+</html>
