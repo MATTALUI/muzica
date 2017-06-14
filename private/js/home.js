@@ -16,7 +16,7 @@ function makeCards(array){
   }
 }
 
-$('#logout_button').on('click', () => {
+$('.logout_button').on('click', () => {
   console.log("start");
   $.ajax({
     type: "GET",

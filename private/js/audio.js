@@ -61,7 +61,7 @@ $(document).ready(function(){
 
 
 
-$('#logout_button').on('click', () => {
+$('.logout_button').on('click', () => {
   console.log("start");
   $.ajax({
     type: "GET",
@@ -78,6 +78,6 @@ $('#logout_button').on('click', () => {
   })
 });
 
-$('#home_button').on('click', () => {
-          window.location.replace('/home.html')
-});
+// $('#home_button').on('click', () => {
+//           window.location.replace('/home.html')
+// });
