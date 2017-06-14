@@ -2,7 +2,7 @@ $('#login').on ('click', ()=>{
   console.log("123");
   var email = $("#email").val();
   var pass = $("#pass").val();
-  // console.log(email,pass)
+  console.log(email,pass)
   $.ajax({
     type: "POST",
     url: "/users/login",
@@ -12,7 +12,8 @@ $('#login').on ('click', ()=>{
     },
     success: function(res){
         // console.log(res);
-        if (res=true){
+        if (res==true){
+          console.log(res);
           window.location.replace('../home.html')
         } else{
           console.log('Incorrect email or password');
