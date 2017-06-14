@@ -9,7 +9,6 @@ $('#create_user').on('click', ()=>{
 
   if (pass!==confirm_pass) {
     console.log('passwords do not match');
-
     return res.send('passwords do not match')
   }
 
@@ -24,9 +23,10 @@ $('#create_user').on('click', ()=>{
       sc_username: sc_username
     },
     success: function(res){
-      if(res){
-        console.log(res);
-        window.location.replace('/home.html')
+      console.log(res[0].hashed_password);
+      if(res[0].hashed_password){
+        // console.log('res=true',res);
+        return window.location.replace('../home.html')
       }
       console.log(res);
     }

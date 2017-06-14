@@ -40,8 +40,8 @@ app.use(function(req, res, next) {
 //       }
 //     console.log(decoded)
 //     // window.location.replace('/home.html')
-//     return res.redirect('/home.html')
-//     next()
+//     return res.redirect('../login')
+//     // next()
 //   });
 //   }
 //   next()

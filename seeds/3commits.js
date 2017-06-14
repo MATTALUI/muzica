@@ -33,7 +33,7 @@ exports.seed = function(knex, Promise) {
     }
     ]);
     })
-    // .then(function(){
-    //   return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM users));");
-    // });
+    .then(function(){
+      return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM users));");
+    });
 };
