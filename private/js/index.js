@@ -21,7 +21,7 @@ const closeModal = function() {
 		modal.style.display = "none"
 	}
 	//event listeners
-button.addEventListener('click', openModal, false)
+// button.addEventListener('click', openModal, false)
 close.addEventListener('click', closeModal, false)
 for (let i = 0; i < clickable.length; i++) {
 	clickable[i].addEventListener('click', openModal, false)
@@ -32,3 +32,14 @@ window.onclick = function(event) {
 		modal.style.display = "none"
 	}
 }
+
+$(document).ready(function () {
+
+    // prepend overlay to DOM
+    $('.team-item', this).prepend($("<div class='overlay'></div>"));
+
+    $(".team-item").hover(function () {
+        $('.overlay', this).fadeToggle(400);
+        $('.team-info', this).fadeToggle(400);
+    });
+});

@@ -17,21 +17,40 @@
   <script src="js/audio.js" charset="utf-8" defer></script>
 </head>
 <body class="orange darken-4">
-  <nav class="grey darken-3" role="navigation">
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/production.html">Project 1</a></li>
+  <li><a href="/production.html">Project two</a></li>
+  <li class="divider"></li>
+  <li><a href="/production.html">three</a></li>
+</ul>
+<ul id="dropdown3" class="dropdown-content">
+  <li><a href="/production.html">Project 1</a></li>
+  <li><a href="/production.html">Project two</a></li>
+  <li class="divider"></li>
+  <li><a href="/production.html">three</a></li>
+</ul>
+  <nav class="orange darken-4" role="navigation">
     <div class="nav-wrapper container">
-      <a src="" id="logo-container" href="#" class="brand-logo"></a>
-      <a class="center brand-logo" src ="" href="#">Project Title</a>
+      <!-- <a src="" id="logo-container" href="" class="brand-logo"></a> -->
+      <a class="center brand-logo" src ="" href="/home.html">Muzica</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Production</a></li>
-        <li><a href="#">Log In</a></li>
+        <li><a href="#">Team Muzica</a></li>
+        <li><a href="/home.html">Library</a></li>
+        <li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown1">Production
+          <i class="material-icons right">arrow_drop_down</i>
+        </a></li>
+        <li><a class="logout_button" href="#">Log Out</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="orange darken-4 button-collapse"><i class="material-icons">menu</i></a>
-      <ul id="nav-mobile" class="grey darken 3 side-nav">
+      <ul id="nav-mobile" class="orange darken-4 side-nav">
         <li>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Production</a></li>
-          <li><a href="#">Log In</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="/home.html">Library</a></li>
+          <li class="active"><a class="dropdown-button" href="#!" data-activates="dropdown3">Production
+            <i class="material-icons right">arrow_drop_down</i>
+          </a></li>
+          <li class="divider"></li>
+          <li class="logout_button"><a href="#">Log Out</a></li>
         </li>
       </ul>
     </div>
@@ -41,23 +60,15 @@
       <div class="col s12 m6 big-boi">
         <!--Master MP3-->
         <div class="title">
-          <h3 class="orange darken-4 center-align">Master Copy</h3>
+          <h3 class="orange darken-4 center-align">Master</h3>
         </div>
         <div class="master-container">
-          <div class="card example-master">
-            <iframe id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no"></iframe>
-            <span class="card-title">Card Title</span>
-            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-            </div>
-          </div>
         </div>
       </div>
       <div class="col s12 m6 commit-history">
         <!--history of Commmits-->
         <div class="title">
-          <h3 class="orange darken-4 center-align">Commit History</h3>
+          <h3 class="orange darken-4 center-align">Work In Progress</h3>
         </div>
         <div class="card-container col s12">
         </div>
@@ -81,7 +92,7 @@
           </form>
         </div>
         <div class="modal-footer commit-form">
-          <a href="#!" class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
+          <a class="add-commit modal-action  modal-close waves-effect waves-green btn-flat ">Agree</a>
         </div>
       </div>
       <div class="waves-effect waves-light orange darken-4 btn-large new-commit" data-target="commit-modal">

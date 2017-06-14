@@ -36,14 +36,47 @@ function setIframe(username, track){
 }
 
 function addCommit(){
-  var $newCom = $('.example-master').clone();
-  $newCom.prependTo('.card-container');
+  $('.add-commit').on('click', function(){
+    var track = $('#track').val();
+    track = track.replace(/\s+/g, '-').toLowerCase()
+    var comment = $('#soundNotes').val();
+    var projectId = getUrlVars().id;
+    var widgeturl = "https://w.soundcloud.com/player/?url=https://soundcloud.com/"
+    var dataObj={
+      track:track,
+      comment:comment,
+      projectId: projectId,
+      widgeturl: widgeturl
+    }
+  });
 }
 
 $(document).ready(function(){
   var projectId = getUrlVars().id;
-  $.get(`http://localhost:8000/projects/${projectId}`, function(response){
+  $.get(`projects/${projectId}`, function(response){
     makeCards(response);
   })
-  $('.example-master').children('iframe').attr('src',""+ setIframe('jahseh-onfroy', 'garettes-revenge-produced')+"");
+  addCommit();
 });
+
+
+
+$('.logout_button').on('click', () => {
+  console.log("start");
+  $.ajax({
+    type: "GET",
+    url: "/users/logout",
+    success: function(res){
+        if (res){
+          console.log("retrun of logout button", res);
+          window.location.replace('/')
+        } else{
+          console.log('Error');
+        }
+    }
+  })
+});
+
+// $('#home_button').on('click', () => {
+//           window.location.replace('/home.html')
+// });
