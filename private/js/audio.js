@@ -38,6 +38,7 @@ function clearForm(){
 
 function addCommit(){
   $('.add-commit').on('click', function(){
+    console.log('hello');
     var track = $('#track').val();
     track = track.replace(/\s+/g, '-').toLowerCase();
     var comment = $('#soundNotes').val();
@@ -49,14 +50,22 @@ function addCommit(){
       projectId: projectId,
       is_master: isMaster
     }
-    
-    dataObj={
-      track:'',
-      comment: '',
-      projectId: '',
-      is_master: ''
-    }
-    clearForm();
+    console.log(dataObj);
+    $.ajax({
+      type: "POST",
+      url: "/projects/commit",
+      data: dataObj,
+      success: function(res){
+        console.log(res);
+        dataObj={
+          track:'',
+          comment: '',
+          projectId: '',
+          is_master: ''
+        }
+        clearForm();
+      }
+    });
   });
 }
 
