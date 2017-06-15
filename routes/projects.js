@@ -176,7 +176,20 @@ router.delete('/', function(req, res, next){
   }
 
 });
-
+router.delete('/commit', function(req, res, next){
+  knex('commits')
+  .del()
+  .where('id', req.body.commit_id)
+  .then(function(){
+    knex('commits')
+    .where('project_id', req.body.project_id)
+    .join('users', 'commits.submitted_by','=','users.id')
+    .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+    .then(function(commits){
+      res.send(commits);
+    });
+  });
+});
 
 
 
