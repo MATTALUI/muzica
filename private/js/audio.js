@@ -35,7 +35,6 @@ function makeCards(array){
       let content = $(master).children()[$(master).children().length -1];
       let masterButton = $(content).children()[$(content).children().length-1]
       $(masterButton).hide();
-      // console.log(masterButton);
     }
   }
 }
@@ -103,12 +102,10 @@ $(document).ready(function(){
   $.get('projects', function(response){
       makeDropdown(response)
       $.get('permissions/me', function(res){
-        console.log(response);
         makeDropdownWithCollabs(res)
       });
   });
   $.get(`/permissions/${projectId}`,(response)=>{
-    // console.log('whos your user!!!!',response);
     makeColaboratorCards(response)
   })
   addCommit();
@@ -117,9 +114,10 @@ $(document).ready(function(){
 $('body').on('click', '.delete-commit', () => {
   var commitId = ($(event.target).closest('.exmaple-commit').attr('id'));
   var projectId = getUrlVars().id;
+  console.log(commitId);
   $.ajax({
     type: "DELETE",
-    // url: "projects",
+    url: "projects/commit",
     data: {commit_id: commitId, project_id:  projectId},
     success: function(res){
       makeCards(res);
