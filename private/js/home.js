@@ -3,6 +3,13 @@ $(document).ready(function(){
       makeCards(response);
       makeDropdown(response);
   });
+  $.get('permissions/me', function(response){
+    makeOtherCards(response);
+  });
+  $.get('projects/masters', function(response){
+    console.log(response);
+    addIframe(response);
+  });
 });
 
 
@@ -27,6 +34,18 @@ function makeDropdown(array){
       })
 }
 
+function addIframe(array){
+  for (var i = 0; i < array.length; i++){
+    var projectId = array[i].project_id;
+    var widgeturl = array[i].widget_url;
+    var $iframe = $(`#${projectId}`).find('iframe');
+    var $img = $(`#${projectId}`).find('img');
+    $img.addClass('hidden');
+    $iframe.removeClass('hidden');
+    $iframe.attr('src', `${widgeturl}`);
+  }
+}
+
 function makeCards(array){
   $('.project-container').empty();
   for (var i = 0; i < array.length; i++){
@@ -34,6 +53,19 @@ function makeCards(array){
     var projectTitle = array[i].project_title;
     var comments = array[i].project_description;
     var source = $("#Project").html();
+    var template = Handlebars.compile(source);
+    var context = {title: projectTitle, id: projectId, comment: comments};
+    var html= template(context);
+    $('.project-container').append(html);
+  }
+}
+
+function makeOtherCards(array){
+  for (var i = 0; i < array.length; i++){
+    var projectId = array[i].id;
+    var projectTitle = array[i].project_title;
+    var comments = array[i].project_description;
+    var source = $("#other-Project").html();
     var template = Handlebars.compile(source);
     var context = {title: projectTitle, id: projectId, comment: comments};
     var html= template(context);
@@ -49,6 +81,9 @@ $('body').on('click', '.delete-project', () => {
     data: {projectId},
     success: function(res){
       makeCards(res);
+      $.get('permissions/me', function(response){
+        makeOtherCards(response);
+      });
     }
   });
 });
@@ -90,6 +125,9 @@ $('body').on('click', '.update-project', ()=>{
     data: dataObj,
     success: function(res){
       makeCards(res);
+      $.get('permissions/me', function(response){
+        makeOtherCards(response);
+      });
     }
   });
 });
