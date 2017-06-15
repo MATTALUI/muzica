@@ -32,8 +32,23 @@ router.get('/me', function(req, res, next){
     }catch(err){}
   });
 });
-router.patch('', function(req, res, next){
-  
+router.post('/:projectId', function(req, res, next){
+  //req.body needs the project_id and the email of the user that they want to add+
+  knex('users')
+  .select(['id', 'first_name', 'last_name', 'email'])
+  .where('email', req.body.email)
+  .then(function(addedUser){
+    knex('permissions')
+    .insert({
+      project_id: req.params.id,
+      allowed_user: addedUser.id
+    })
+    .where('project_id', req.params.projectId)
+    .returning('*')
+    .then(function(addedPermission){
+      res.send(addedPermission)
+    });
+  })
 });
 
 
