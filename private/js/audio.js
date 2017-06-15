@@ -33,11 +33,15 @@ function makeCards(array){
 
 function makeColaboratorCards(array){
   // $('.collaborator-container').empty();
-  // // $('.card-container').empty();
-  // for (var i = 0; i < array.length; i++){
-  //
-  //     $('.collaborator-container').append(html);
-  // }
+  // $('.card-container').empty();
+  var list = document.getElementById('collaborators-list')
+  for (var i = 0; i < array.length; i++){
+      var li = document.createElement('li');
+      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name
+      list.appendChild(li)
+      // div.innerHTML=array
+      // $('.collaborator-container').append(html);
+  }
 }
 
 function clearForm(){
@@ -139,6 +143,7 @@ $('#add-collaborator-button').on('click', () => {
       email: email
     },
     success: function(res){
+      makeColaboratorCards(res)
       console.log("return of add collaborators button button",res);
     }
   })
