@@ -67,11 +67,32 @@ $('.logout_button').on('click', () => {
   })
 });
 
-var click;
+
+$('body').on('click', '.edit', ()=>{
+  $(event.target).closest('.exmaple-commit').addClass('projy-proj');
+});
 
 $('body').on('click', '.update-project', ()=>{
-  click = true;
-  console.log(click);
+  var newTitle = $('#title').val();
+  $('#title').val('');
+  var newDescription = $('#description').val();
+  $('#description').val('');
+  var project_id = $('.projy-proj').attr('id');
+  $('.projy-proj').removeClass('projy-proj');
+  var dataObj = {
+    projectId: project_id,
+    project_title: newTitle,
+    project_description: newDescription
+  };
+  $.ajax({
+    type: "PATCH",
+    url: "projects",
+    data: dataObj,
+    success: function(res){
+      console.log(res);
+      // makeCards(res);
+    }
+  })
 });
 
 
