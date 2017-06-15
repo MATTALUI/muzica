@@ -34,6 +34,13 @@ router.get('/', function(req,res,next){
   });
 
 });
+router.get('/masters', function(req,res,next){
+  knex('commits')
+  .where('is_master', true)
+  .then(function(masters){
+    res.send(masters)
+  })
+});
 router.get('/:id', function(req, res, next){
   knex('commits')
   .where('project_id', req.params.id)
