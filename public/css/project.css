@@ -18,8 +18,12 @@ h3 {
 
 .collaborator-container{
   position: relative;
-  /*top: 30vh;*/
   width: 100%;
+}
+
+#collaborators-list{
+  color: black;
+  background-color: white;
 }
 
 .big-boi{

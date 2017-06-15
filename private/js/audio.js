@@ -42,7 +42,6 @@ function makeCards(array){
 }
 
 function makeColaboratorCards(array){
-  console.log(array);
   $('#collaborators-list').empty();
   // $('.card-container').empty();
   var list = document.getElementById('collaborators-list')
@@ -51,11 +50,10 @@ function makeColaboratorCards(array){
       li.innerHTML = array[i].first_name+ ' ' + array[i].last_name + ' ' + array[i].sc_username
       li.setAttribute('data',("userId:"+array[i].id))
       li.setAttribute('id',array[i].id)
+      li.setAttribute('class','center-align')
       if(!(document.getElementById(array[i].id))){
         list.appendChild(li)
       }
-      // div.innerHTML=array
-      // $('.collaborator-container').append(html);
   }
 }
 
@@ -91,6 +89,7 @@ function addCommit(){
           is_master: ''
         }
         makeCards(res);
+        makeDropdown(res)
         clearForm();
       }
     });
@@ -120,7 +119,8 @@ $('body').on('click', '.delete-commit', () => {
     // url: "projects",
     data: {commit_id: commitId, project_id:  projectId},
     success: function(res){
-      // makeCards(res);
+      makeCards(res);
+      makeDropdown(res)
     }
   });
 });
@@ -162,7 +162,7 @@ function makeDropdown(array){
 }
 
 
-$('#logout_button').on('click', () => {
+$('.logout_button').on('click', () => {
   $.ajax({
     type: "GET",
     url: "/users/logout",
@@ -179,7 +179,6 @@ $('#logout_button').on('click', () => {
 $('#add-collaborator-button').on('click', () => {
   var projectId = getUrlVars().id;
   let email = $("#collaborator-email").val();
-  console.log(email);
   $("#collaborator-email").val('');
   $.ajax({
     type: "POST",
@@ -188,9 +187,11 @@ $('#add-collaborator-button').on('click', () => {
       email: email
     },
     success: function(res){
+      if(res==='invalid'){
+        return alert("User email doesn't exist")
+      }
       makeColaboratorCards(res)
-      console.log("return of add collaborators button button",res);
-    }
+    },
   })
 });
 

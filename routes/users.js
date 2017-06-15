@@ -58,14 +58,11 @@ router.post('/login', (req, res, next) => {
 });
 
 router.post('/createuser', (req, res, next) => {
-  // console.log(req.body);
   knex('users')
     .select('*')
     .where('email', req.body.email)
     .then(function(user) {
-      // console.log(user);
       if (Object.keys(user).length > 0) {
-        // console.log("line 66 email already exists");
         res.setHeader('Content-Type', 'text/plain');
         return res.send("Invalid email, already taken");
       } else {
@@ -79,13 +76,20 @@ router.post('/createuser', (req, res, next) => {
               .returning('*')
               .insert(req.body)
               .then(new_user=>{
-                // console.log(new_user);
+                console.log("this is what sends when we create a user",new_user);
+                let token = jwt.sign(new_user[0], 'secret');
+                res.cookie('token', token, {
+                  httpOnly: true
+                });
                 return res.send(new_user)
               })
           }
         });
       }
-    });
+    })
+    .catch(err=>{
+      return res.send("invalid")
+    })
 });
 
 router.get('/logout',(req,res,next)=>{
