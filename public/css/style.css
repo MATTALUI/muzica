@@ -70,9 +70,12 @@
 .login-button-container{
   margin-left: 8%;
 }
-
+/*------------------------------------------*/
 .project-container{
   height: 80vh;
+  width: 60vw;
+  position: absolute;
+  left: 20vw;
   overflow: scroll;
 }
 
