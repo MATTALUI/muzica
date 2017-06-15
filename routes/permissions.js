@@ -32,8 +32,9 @@ router.get('/me', function(req, res, next){
     }catch(err){}
   });
 });
-
-
+router.patch('', function(req, res, next){
+  
+});
 
 
 
