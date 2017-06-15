@@ -1,5 +1,5 @@
 nav{
-  border-bottom: 4px solid #e65100;
+  border-bottom: 4px solid #ff7f00;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -68,4 +68,16 @@ h3 {
 
 .exmaple-commit{
   margin-top: 0%;
+  background-color: #424242;
+  color: white;
+}
+.nav-gradient {
+  background: rgba(255,175,75,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, rgba(255,175,75,1)), color-stop(19%, rgba(255,166,61,1)), color-stop(21%, rgba(255,165,60,1)), color-stop(100%, rgba(255,127,0,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff7f00', GradientType=1 );
 }
