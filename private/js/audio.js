@@ -41,15 +41,16 @@ function makeCards(array){
 
 function makeColaboratorCards(array){
   $('#collaborators-list').empty();
-  // $('.card-container').empty();
   var list = document.getElementById('collaborators-list')
   for (var i = 0; i < array.length; i++){
       var li = document.createElement('li');
-      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name + ' ' + array[i].sc_username
+      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name +
+      //  ' ' + array[i].sc_username +
+      '\n<button class="delete-collaborator button">REMOVE FROM PROJECT</button>'
       li.setAttribute('data',("userId:"+array[i].id))
-      li.setAttribute('id',array[i].id)
+      li.setAttribute('id','collab'+array[i].id)
       li.setAttribute('class','center-align')
-      if(!(document.getElementById(array[i].id))){
+      if(!(document.getElementById('collab'+array[i].id))){
         list.appendChild(li)
       }
   }
@@ -137,6 +138,11 @@ $('body').on('click', '.make-master-button', ()=>{
     }
   })
 
+});
+$('body').on('click', '.delete-collaborator', ()=>{
+  var projectId = getUrlVars().id;
+  let collabId = Number($(event.target).closest('li').attr('id').split('collab')[1]);
+  console.log(projectId,collabId);
 });
 
 function makeDropdownWithCollabs(array){

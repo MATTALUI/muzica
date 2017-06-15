@@ -7,12 +7,9 @@ const path = require("path");
 const jwt = require('jsonwebtoken');
 const saltRounds = 8;
 const secret = 'secret';
-// const humps = require('humps');
 
 
 router.post('/login', (req, res, next) => {
-  // console.log(req.body);
-  // console.log('line12');
   knex('users')
     .select('*')
     .where('email', req.body.email)
@@ -41,9 +38,6 @@ router.post('/login', (req, res, next) => {
             // console.log("ready to redirect");
               // return res.redirect('/home.html')
                 return res.send(true)
-
-            //     // res.sendFile(path.join( __dirname+'/home.html'));
-            //   })
           }else{
             return res.send(false)
           }
@@ -88,7 +82,6 @@ router.post('/createuser', (req, res, next) => {
 });
 
 router.get('/me', function(req, res, next){
-  // res.send('my info')
   let token = req.cookies.token;
   // || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4';
   try{
