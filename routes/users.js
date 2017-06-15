@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 const path = require("path");
 const jwt = require('jsonwebtoken');
 const saltRounds = 8;
+const secret = 'secret';
 // const humps = require('humps');
 
 
@@ -20,19 +21,15 @@ router.post('/login', (req, res, next) => {
       console.log(user);
       console.log("search result from db",user);
       if (Object.keys(user).length === undefined) {
-        // console.log("right here");
         res.setHeader('Content-Type', 'text/plain');
         res.send("Incorrect email or password");
       } else {
         bcrypt.compare(req.body.password, user.hashed_password, function(err, decode) {
-          // console.log(decode);
-          // console.log('line25');
           if (err) {
             return res.send('Invalid email or password')
           } else if (decode===true){
-
+            deleter 
             var token = jwt.sign(user, 'secret');
-            // console.log(token);
             res.cookie('token', token, {
               httpOnly: true
             });
@@ -91,6 +88,21 @@ router.post('/createuser', (req, res, next) => {
       return res.send("invalid")
     })
 });
+
+router.get('/me', function(req, res, next){
+  // res.send('my info')
+  let token = req.cookies.token;
+  // || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4';
+  try{
+    jwt.verify(token, secret, function(err, userInfo){
+      if(err){
+        res.send('you do not have permission to be here')
+      }else{
+        res.send(userInfo);
+      }
+    });
+  }catch(err){}
+})
 
 router.get('/logout',(req,res,next)=>{
   res.clearCookie('token');
