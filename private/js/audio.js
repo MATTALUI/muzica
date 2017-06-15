@@ -14,7 +14,6 @@ function getUrlVars(){
 
 
 function makeCards(array){
-  console.log(array);
   $('.master-container').empty();
   $('.card-container').empty();
   for (var i = 0; i < array.length; i++){
@@ -131,13 +130,11 @@ $('body').on('click', '.delete-commit', () => {
 $('body').on('click', '.make-master-button', ()=>{
   var projectId = getUrlVars().id;
   let commitId = $(event.target).closest('.exmaple-commit').attr('id');
-  // console.log(`pid: ${projectId}\ncid: ${commitId}`);
   $.ajax({
     type: 'PATCH',
     url: `/projects/masters/${projectId}`,
     data: {commitId},
     success: function(response){
-      // console.log(response);
       makeCards(response)
     }
   })
