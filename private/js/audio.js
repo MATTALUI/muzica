@@ -32,13 +32,18 @@ function makeCards(array){
 }
 
 function makeColaboratorCards(array){
-  // $('.collaborator-container').empty();
+  console.log(array);
+  $('#collaborators-list').empty();
   // $('.card-container').empty();
   var list = document.getElementById('collaborators-list')
   for (var i = 0; i < array.length; i++){
       var li = document.createElement('li');
-      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name
-      list.appendChild(li)
+      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name + ' ' + array[i].sc_username
+      li.setAttribute('data',("userId:"+array[i].id))
+      li.setAttribute('id',array[i].id)
+      if(!(document.getElementById(array[i].id))){
+        list.appendChild(li)
+      }
       // div.innerHTML=array
       // $('.collaborator-container').append(html);
   }
@@ -91,7 +96,7 @@ $(document).ready(function(){
       makeDropdown(response)
   });
   $.get(`/permissions/${projectId}`,(response)=>{
-    console.log('whos your user!!!!',response);
+    // console.log('whos your user!!!!',response);
     makeColaboratorCards(response)
   })
   addCommit();
@@ -136,6 +141,8 @@ $('#logout_button').on('click', () => {
 $('#add-collaborator-button').on('click', () => {
   var projectId = getUrlVars().id;
   let email = $("#collaborator-email").val();
+  console.log(email);
+  $("#collaborator-email").val('');
   $.ajax({
     type: "POST",
     url: `permissions/${projectId}`,

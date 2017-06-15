@@ -10,7 +10,7 @@ const saltRounds = 8;
 
 
 router.post('/login', (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
   // console.log('line12');
   knex('users')
     .select('*')
@@ -20,7 +20,7 @@ router.post('/login', (req, res, next) => {
       console.log(user);
       console.log("search result from db",user);
       if (Object.keys(user).length === undefined) {
-        console.log("right here");
+        // console.log("right here");
         res.setHeader('Content-Type', 'text/plain');
         res.send("Incorrect email or password");
       } else {
@@ -65,7 +65,7 @@ router.post('/createuser', (req, res, next) => {
     .then(function(user) {
       // console.log(user);
       if (Object.keys(user).length > 0) {
-        console.log("line 66 email already exists");
+        // console.log("line 66 email already exists");
         res.setHeader('Content-Type', 'text/plain');
         return res.send("Invalid email, already taken");
       } else {
@@ -79,7 +79,7 @@ router.post('/createuser', (req, res, next) => {
               .returning('*')
               .insert(req.body)
               .then(new_user=>{
-                console.log(new_user);
+                // console.log(new_user);
                 return res.send(new_user)
               })
           }
