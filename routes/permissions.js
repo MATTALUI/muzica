@@ -55,10 +55,25 @@ router.post('/:projectId', function(req, res, next){
     })
     .where('project_id', req.params.projectId)
     .returning('*')
+    .first()
     .then(function(addedPermission){
-      res.send(addedPermission)
+      console.log(addedPermission)
+      knex('users')
+      .select(['id', 'first_name', 'last_name', 'email'])
+      .where('users.id', addedPermission.allowed_user)
+      .then(function(addedUsersInfo){
+        res.send(addedUsersInfo)
+      });
     });
   })
+});
+router.delete('/:projectId', function(req, res, next){
+  knex('permissions')
+  .del()
+  .where('allowed_user', req.body.userId)
+  .then(function(){
+    res.send('atll do, pig')
+  });
 });
 
 

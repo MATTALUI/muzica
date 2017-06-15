@@ -19,6 +19,14 @@ exports.seed = function(knex, Promise) {
         {
           project_id: 3,
           allowed_user: 1,
+        },
+        {
+          project_id: 5,
+          allowed_user: 3
+        },
+        {
+          project_id: 5,
+          allowed_user: 4
         }
       ]);
 
