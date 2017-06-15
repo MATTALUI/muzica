@@ -32,12 +32,12 @@ function makeCards(array){
 }
 
 function makeColaboratorCards(array){
-  $('.collaborator-container').empty();
-  // $('.card-container').empty();
-  for (var i = 0; i < array.length; i++){
-    
-      $('.collaborator-container').append(html);
-  }
+  // $('.collaborator-container').empty();
+  // // $('.card-container').empty();
+  // for (var i = 0; i < array.length; i++){
+  //
+  //     $('.collaborator-container').append(html);
+  // }
 }
 
 function clearForm(){
@@ -125,6 +125,21 @@ $('#logout_button').on('click', () => {
       } else{
         console.log('Error');
       }
+    }
+  })
+});
+
+$('#add-collaborator-button').on('click', () => {
+  var projectId = getUrlVars().id;
+  let email = $("#collaborator-email").val();
+  $.ajax({
+    type: "POST",
+    url: `permissions/${projectId}`,
+    data: {
+      email: email
+    },
+    success: function(res){
+      console.log("return of add collaborators button button",res);
     }
   })
 });
