@@ -24,8 +24,8 @@ exports.seed = function(knex, Promise) {
       },
       {
         project_owner: 1,
-        project_title: 'Real Data',
-        project_description: 'This is a collaboration for'
+        project_title: 'Space Cats',
+        project_description: 'Project for g49.'
       }]);
 
     }).then(function(){
