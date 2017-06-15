@@ -21,6 +21,11 @@ exports.seed = function(knex, Promise) {
         project_owner: 3,
         project_title: 'A True collaboration',
         project_description: 'A project to test the potential of Muzica\'s collaboration powers!'
+      },
+      {
+        project_owner: 1,
+        project_title: 'Real Data',
+        project_description: 'This is a collaboration for'
       }]);
 
     }).then(function(){
