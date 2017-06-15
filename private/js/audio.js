@@ -14,6 +14,7 @@ function getUrlVars(){
 
 
 function makeCards(array){
+  console.log(array);
   $('.master-container').empty();
   $('.card-container').empty();
   for (var i = 0; i < array.length; i++){
@@ -30,11 +31,17 @@ function makeCards(array){
     }else{
       $('.card-container').append(html);
     }
+    if($('.master-container').children().length > 0){
+      let master = $('.master-container').children()[0];
+      let content = $(master).children()[$(master).children().length -1];
+      let masterButton = $(content).children()[$(content).children().length-1]
+      $(masterButton).hide();
+      // console.log(masterButton);
+    }
   }
 }
 
 function makeColaboratorCards(array){
-  console.log(array);
   $('#collaborators-list').empty();
   // $('.card-container').empty();
   var list = document.getElementById('collaborators-list')
@@ -43,11 +50,10 @@ function makeColaboratorCards(array){
       li.innerHTML = array[i].first_name+ ' ' + array[i].last_name + ' ' + array[i].sc_username
       li.setAttribute('data',("userId:"+array[i].id))
       li.setAttribute('id',array[i].id)
+      li.setAttribute('class','center-align')
       if(!(document.getElementById(array[i].id))){
         list.appendChild(li)
       }
-      // div.innerHTML=array
-      // $('.collaborator-container').append(html);
   }
 }
 
@@ -83,6 +89,7 @@ function addCommit(){
           is_master: ''
         }
         makeCards(res);
+        makeDropdown(res)
         clearForm();
       }
     });
@@ -112,9 +119,25 @@ $('body').on('click', '.delete-commit', () => {
     // url: "projects",
     data: {commit_id: commitId, project_id:  projectId},
     success: function(res){
-      // makeCards(res);
+      makeCards(res);
+      makeDropdown(res)
     }
   });
+});
+$('body').on('click', '.make-master-button', ()=>{
+  var projectId = getUrlVars().id;
+  let commitId = $(event.target).closest('.exmaple-commit').attr('id');
+  // console.log(`pid: ${projectId}\ncid: ${commitId}`);
+  $.ajax({
+    type: 'PATCH',
+    url: `/projects/masters/${projectId}`,
+    data: {commitId},
+    success: function(response){
+      // console.log(response);
+      makeCards(response)
+    }
+  })
+
 });
 
 function makeDropdown(array){
@@ -139,7 +162,7 @@ function makeDropdown(array){
 }
 
 
-$('#logout_button').on('click', () => {
+$('.logout_button').on('click', () => {
   $.ajax({
     type: "GET",
     url: "/users/logout",
@@ -156,7 +179,6 @@ $('#logout_button').on('click', () => {
 $('#add-collaborator-button').on('click', () => {
   var projectId = getUrlVars().id;
   let email = $("#collaborator-email").val();
-  console.log(email);
   $("#collaborator-email").val('');
   $.ajax({
     type: "POST",
@@ -165,9 +187,11 @@ $('#add-collaborator-button').on('click', () => {
       email: email
     },
     success: function(res){
+      if(res==='invalid'){
+        return alert("User email doesn't exist")
+      }
       makeColaboratorCards(res)
-      console.log("return of add collaborators button button",res);
-    }
+    },
   })
 });
 

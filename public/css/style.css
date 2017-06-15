@@ -629,7 +629,7 @@ body {
 }
 
 .hidden{
-  display: none;
+  display: none !important;
 }
 .place-holder-logo{
   width: 30% !important;
@@ -637,6 +637,7 @@ body {
   top: 10px !important;
   margin-left: -16% !important;
 }
+
 .validate, .valid{
   color: #ff7f00;
   box-shadow: #ff7f00;
