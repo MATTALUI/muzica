@@ -36,7 +36,7 @@ function makeCards(array){
     var template = Handlebars.compile(source);
     var context = {title: projectTitle, id: projectId, comment: comments};
     var html= template(context);
-    $('.project-container').prepend(html);
+    $('.project-container').append(html);
   }
 }
 
@@ -89,10 +89,9 @@ $('body').on('click', '.update-project', ()=>{
     url: "projects",
     data: dataObj,
     success: function(res){
-      console.log(res);
-      // makeCards(res);
+      makeCards(res);
     }
-  })
+  });
 });
 
 
@@ -108,14 +107,7 @@ $('#save_project_button').on('click', () => {
       projectDescription: description
     },
     success: function(res){
-        console.log("return of new project button button",res);
-        // if (res===true){
-        //   // console.log(req.cookies.token);
-        //   // console.log("retrun of logout button", res);
-        //   window.location.replace('/')
-        // } else{
-        //   console.log('Error');
-        // }
+      console.log("return of new project button button",res);
     }
   })
 });
