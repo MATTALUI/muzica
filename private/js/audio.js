@@ -13,6 +13,8 @@ function getUrlVars(){
 }
 
 function makeCards(array){
+  $('.master-container').empty();
+  $('.card-container').empty();
   for (var i = 0; i < array.length; i++){
     var widgetSrc = array[i].widget_url;
     var SubmittedBy = array[i].first_name + " " + array[i].last_name;
@@ -38,7 +40,6 @@ function clearForm(){
 
 function addCommit(){
   $('.add-commit').on('click', function(){
-    console.log('hello');
     var track = $('#track').val();
     track = track.replace(/\s+/g, '-').toLowerCase();
     var comment = $('#soundNotes').val();
@@ -50,19 +51,18 @@ function addCommit(){
       projectId: projectId,
       is_master: isMaster
     }
-    console.log(dataObj);
     $.ajax({
       type: "POST",
       url: "/projects/commit",
       data: dataObj,
       success: function(res){
-        console.log(res);
         dataObj={
           track:'',
           comment: '',
           projectId: '',
           is_master: ''
         }
+        makeCards(res);
         clearForm();
       }
     });
@@ -84,7 +84,6 @@ function makeDropdown(array){
   var dropdown1 = document.getElementById('dropdown1')
   var dropdown3 = document.getElementById('dropdown3')
   array.map((ele,index,arr)=>{
-    console.log(ele);
     var li = document.createElement('li')
     var anchor = document.createElement('a')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
@@ -93,7 +92,6 @@ function makeDropdown(array){
     $(dropdown1).append(li);
     })
     return array.map((ele,index,arr)=>{
-      console.log(ele);
       var li = document.createElement('li')
       var anchor = document.createElement('a')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
@@ -103,14 +101,13 @@ function makeDropdown(array){
       })
 }
 
-$('.logout_button').on('click', () => {
-  console.log("start");
+
+$('#logout_button').on('click', () => {
   $.ajax({
     type: "GET",
     url: "/users/logout",
     success: function(res){
       if (res){
-        console.log("retrun of logout button", res);
         window.location.replace('/')
       } else{
         console.log('Error');
