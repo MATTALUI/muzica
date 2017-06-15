@@ -31,6 +31,15 @@ function makeCards(array){
   }
 }
 
+function makeColaboratorCards(array){
+  $('.collaborator-container').empty();
+  // $('.card-container').empty();
+  for (var i = 0; i < array.length; i++){
+    
+      $('.collaborator-container').append(html);
+  }
+}
+
 function clearForm(){
   $('#track').val('');
   $('#soundNotes').val('');
@@ -77,6 +86,10 @@ $(document).ready(function(){
   $.get('projects', function(response){
       makeDropdown(response)
   });
+  $.get(`/permissions/${projectId}`,(response)=>{
+    console.log('whos your user!!!!',response);
+    makeColaboratorCards(response)
+  })
   addCommit();
 });
 
