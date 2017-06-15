@@ -103,6 +103,10 @@ $(document).ready(function(){
   })
   $.get('projects', function(response){
       makeDropdown(response)
+      $.get('permissions/me', function(res){
+        console.log(response);
+        makeDropdownWithCollabs(res)
+      });
   });
   $.get(`/permissions/${projectId}`,(response)=>{
     // console.log('whos your user!!!!',response);
@@ -140,22 +144,55 @@ $('body').on('click', '.make-master-button', ()=>{
 
 });
 
+function makeDropdownWithCollabs(array){
+  var dropdown1 = document.getElementById('dropdown1')
+  var dropdown3 = document.getElementById('dropdown3')
+  array.map((ele,index,arr)=>{
+    var li = document.createElement('li')
+    var divider = document.createElement('li')
+    var anchor = document.createElement('a')
+    divider.setAttribute('class','divider')
+    anchor.setAttribute('href',('/production.html?id='+ele.id))
+    anchor.innerHTML = ele.project_title
+    $(dropdown1).append(divider);
+    $(li).append(anchor);
+    $(dropdown1).append(li);
+    })
+    return array.map((ele,index,arr)=>{
+      var li = document.createElement('li')
+      var divider = document.createElement('li')
+      var anchor = document.createElement('a')
+      divider.setAttribute('class','divider')
+      anchor.setAttribute('href',('/production.html?id='+ele.id))
+      anchor.innerHTML = ele.project_title
+      $(dropdown3).append(divider);
+      $(li).append(anchor);
+      $(dropdown3).append(li);
+      })
+}
+
 function makeDropdown(array){
   var dropdown1 = document.getElementById('dropdown1')
   var dropdown3 = document.getElementById('dropdown3')
   array.map((ele,index,arr)=>{
     var li = document.createElement('li')
     var anchor = document.createElement('a')
+    var divider = document.createElement('li')
+    divider.setAttribute('class','divider')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
     anchor.innerHTML = ele.project_title
+    $(dropdown1).append(divider);
     $(li).append(anchor);
     $(dropdown1).append(li);
     })
     return array.map((ele,index,arr)=>{
       var li = document.createElement('li')
       var anchor = document.createElement('a')
+      var divider = document.createElement('li')
+      divider.setAttribute('class','divider')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
       anchor.innerHTML = ele.project_title
+      $(dropdown3).append(divider);
       $(li).append(anchor);
       $(dropdown3).append(li);
       })

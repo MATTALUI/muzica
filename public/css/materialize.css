@@ -5619,6 +5619,7 @@ button.btn-floating {
 .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
   float: right;
   margin: 6px 0;
+
 }
 
 .modal-overlay {
@@ -5646,6 +5647,8 @@ button.btn-floating {
   max-height: 100%;
   width: 100%;
   overflow-y: auto;
+  background-color: #424242;
+  color: white;
 }
 
 .modal.modal-fixed-footer .modal-footer {
@@ -6069,7 +6072,7 @@ input[type=search]:focus.valid,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea:focus.valid {
   border-bottom: 1px solid #ff7f00;
-  box-shadow: 0 1px 0 0 #4CAF50;
+  box-shadow: 0 1px 0 0 #ff7f00;
 }
 
 input:not([type]).valid + label:after,
@@ -6129,7 +6132,7 @@ input[type=search]:focus.invalid,
 textarea.materialize-textarea.invalid,
 textarea.materialize-textarea:focus.invalid {
   border-bottom: 1px solid #ff7f00;
-  box-shadow: 0 1px 0 0 #F44336;
+  box-shadow: 0 1px 0 0 #ff7f00;
 }
 
 input:not([type]).invalid + label:after,
