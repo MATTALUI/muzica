@@ -5619,7 +5619,7 @@ button.btn-floating {
 .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-flat {
   float: right;
   margin: 6px 0;
-  
+
 }
 
 .modal-overlay {
@@ -6132,7 +6132,7 @@ input[type=search]:focus.invalid,
 textarea.materialize-textarea.invalid,
 textarea.materialize-textarea:focus.invalid {
   border-bottom: 1px solid #ff7f00;
-  box-shadow: 0 1px 0 0 #F44336;
+  box-shadow: 0 1px 0 0 #ff7f00;
 }
 
 input:not([type]).invalid + label:after,
