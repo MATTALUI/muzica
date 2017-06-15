@@ -5,6 +5,8 @@ nav{
 }
 h3 {
   color: white;
+  background: transparent !important;
+  border-bottom: 5px solid #ff7f00 !important;
 }
 .big-boi, .commit-history{
   height: 120vh;
@@ -32,8 +34,8 @@ h3 {
 
 .commit-history{
   margin: 0 0 0 0;
-  border-left: 4px solid grey;
-  background-color: rgba(66, 66, 66, 0.8);
+  border-left: 2px solid #424242;
+  /*background-color: rgba(255, 107, 0, 0.2); rgba(0, 0, 0, 0)*/
   overflow: scroll;
 }
 
@@ -84,4 +86,8 @@ h3 {
   background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
   background: radial-gradient(ellipse at center, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff7f00', GradientType=1 );
+}
+.card-container{
+  padding-left: 0px !important;
+  padding-right: 5px !important;
 }
