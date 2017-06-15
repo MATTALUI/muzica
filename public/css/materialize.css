@@ -2349,7 +2349,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace, monospace, sans-serif;;
   font-size: 1em;
 }
 
@@ -2727,7 +2727,7 @@ video.responsive-video {
   color: rgba(255, 255, 255, 0.7);
   vertical-align: top;
   display: inline-block;
-  font-family: 'Material Icons';
+  font-family: 'Material Icons', sans-serif;;
   font-weight: normal;
   font-style: normal;
   font-size: 25px;
@@ -4242,8 +4242,9 @@ nav .button-collapse i {
 
 nav .brand-logo {
   position: absolute;
-  color: #fff;
+  color: black;
   display: inline-block;
+  font-family: sans-serif;
   font-size: 2.1rem;
   padding: 0;
   white-space: nowrap;
