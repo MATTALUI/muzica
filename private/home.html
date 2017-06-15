@@ -71,15 +71,11 @@
           <br>
           <!-- <h3 class="center-align">Shhhhh.. You're in the Library!</h3> -->
         </div>
-
         <div id="newprojectbutton">
           <a href="#0" id="modal-button" class="button good">New Project</a>
           <div id="myModal" class="modal">
-
             <!-- Modal content -->
-
             <div class="modal-content slideDown">
-
               <div class="modal-header">
                 <span class="close" id="closeModal">&times;</span>
                 <h2>New Project</h2>
@@ -102,7 +98,23 @@
             </div>
           </div>
         </div>
-
+        <div id="modal1" class="modal">
+          <form class="col s12 commit-data">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="title" type="text" class="validate">
+                <label for="titel">New Title</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="description" class="materialize-textarea"></textarea>
+                <label for="description">New Description</label>
+              </div>
+            </div>
+          </form>
+          <a href="" class="modal-action waves-effect waves-orange btn-flat update-project" style="background: #ff7f00;">Update</a>
+         </div>
         <div class="project-container">
         </div>
       </div>
@@ -119,6 +131,7 @@
       <div class="card-content">
         <p>{{comment}}</p>
         <a class="btn waves-effect waves-light orange darken-4 delete-project"><i class="material-icons">delete</i></a>
+        <a class="waves-effect waves-light btn" href="#modal1">EDIT</a>
       </div>
     </div>
   </script>

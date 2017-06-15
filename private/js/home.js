@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $.get('projects', function(response){
       makeCards(response);
-      makeDropdown(response)
+      makeDropdown(response);
   });
 });
 
@@ -66,6 +66,14 @@ $('.logout_button').on('click', () => {
     }
   })
 });
+
+var click;
+
+$('body').on('click', '.update-project', ()=>{
+  click = true;
+  console.log(click);
+});
+
 
 $('#save_project_button').on('click', () => {
   let title = $("#new_project_title").val();
