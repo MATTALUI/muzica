@@ -11,6 +11,10 @@ $(document).ready(function(){
       addIframe(resp);
     });
   });
+  $.get('users/me', function(res){
+    console.log(res);
+    $('.title').innerText();
+  });
 });
 
 function makeDropdownWithCollabs(array){
