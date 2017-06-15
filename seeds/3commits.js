@@ -41,7 +41,7 @@ exports.seed = function(knex, Promise) {
       submitted_by: 1,
       widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/mattalui/space-cats',
       is_master: true,
-      commit_comment: 'lil yachty is my homie!1!!1'
+      commit_comment: 'This is the master. I want the project to capture this essence.'
     }]);
     }).then(function(){
       return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM commits));");
