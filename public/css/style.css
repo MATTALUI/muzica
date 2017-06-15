@@ -71,7 +71,7 @@
 .login-button-container{
   margin-left: 8%;
 }
-/*------------------------------------------*/
+
 .project-container{
   height: 80vh;
   width: 60vw;
@@ -657,11 +657,20 @@ body {
 }
 
 .production{
-  margin-left: 15% !important;
+  margin-left: 11vw !important;
 }
 
 .title-container > h3{
   color: white;
   background: transparent !important;
   border-bottom: 5px solid #ff7f00 !important;
+}
+.exmaple-commit{
+  margin-top: 0%;
+  background-color: #2d2d2d;
+  color: white;
+}
+
+.exmaple-commit .card-content{
+  background: #424242;
 }

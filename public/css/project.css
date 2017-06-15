@@ -46,7 +46,6 @@ h3 {
 }
 
 .card{
-  padding: 10px;
   opacity: 1;
 }
 
@@ -74,8 +73,12 @@ h3 {
 
 .exmaple-commit{
   margin-top: 0%;
-  background-color: #424242;
+  background-color: #2d2d2d;
   color: white;
+}
+
+.exmaple-commit .card-content{
+  background: #424242;
 }
 .nav-gradient {
   background: rgba(255,175,75,1);
