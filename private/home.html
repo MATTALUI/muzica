@@ -57,7 +57,7 @@
 
     <div class="main-body">
       <div class="row">
-        <a href="#0" id="modal-button" class="waves-effect waves-light orange darken-4 btn-large button good newProjectButton">New Project</a>
+        <a href="#0" id="modal-button" class="waves-light orange darken-4 btn-large button good newProjectButton">New Project</a>
         <div class="orange-text text-darken-4 col s10 offset-s1 m8 offset-m2 project-history">
           <br>
           <div>
@@ -81,11 +81,11 @@
                       <label for="">Description</label>
                       <input id="new_project_description" type="text">
                     </div>
-                </div>
-                <div class="modal-footer">
-                  <input id="save_project_button" type="submit" class="button good" value="Save">
-                </div>
-                </form>
+                  </div>
+                  <div class="modal-footer">
+                    <input id="save_project_button" type="submit" class="button good modal-action modal-close" value="Save">
+                  </form>
+                  </div>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@
               </div>
             </div>
           </form>
-          <div class="waves-effect waves-orange btn-flat update-project modal-close" style="background: #ff7f00;">Update</div>
+          <div class="waves-orange btn-flat update-project modal-close" style="background: #ff7f00;">Update</div>
          </div>
         <div class="project-container">
         </div>
@@ -116,14 +116,15 @@
   <script id="Project" type="text/x-handlebars-template">
     <div class="card exmaple-commit" id='{{id}}'>
       <div class="card-image">
+        <img class="place-holder-logo" src="../muzicalogo.png" alt="muzica logo" width="100px" height="100px">
+        <iframe class="hidden" id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="{{widget_url}}"></iframe>
         <h3>{{title}}</h3>
-        <a class="btn-floating halfway-fab waves-effect waves-light orange darken-4"><i class="material-icons">add</i></a>
-        <a class="btn-floating halfway-fab waves-effect waves-light orange darken-4" href="production.html?id={{id}}"><i class="material-icons">play_arrow</i></a>
+        <a class="btn-floating halfway-fab waves-light orange darken-4" href="production.html?id={{id}}"><i class="material-icons">play_arrow</i></a>
       </div>
       <div class="card-content">
         <p>{{comment}}</p>
-        <a class="btn waves-effect waves-light orange darken-4 delete-project"><i class="material-icons">delete</i></a>
-        <a class="waves-effect waves-light btn edit" href="#modal1">EDIT</a>
+        <a class="btn waves-light orange darken-4 delete-project"><i class="material-icons">delete</i></a>
+        <a class="waves-light btn edit" href="#modal1">EDIT</a>
       </div>
     </div>
   </script>

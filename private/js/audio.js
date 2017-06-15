@@ -12,6 +12,7 @@ function getUrlVars(){
   return vars;
 }
 
+
 function makeCards(array){
   $('.master-container').empty();
   $('.card-container').empty();
@@ -73,7 +74,6 @@ function addCommit(){
 $(document).ready(function(){
   var projectId = getUrlVars().id;
   $.get(`projects/${projectId}`, function(response){
-    console.log(response);
     makeCards(response);
   })
   $.get('projects', function(response){
@@ -85,7 +85,6 @@ $(document).ready(function(){
 $('body').on('click', '.delete-commit', () => {
   var commitId = ($(event.target).closest('.exmaple-commit').attr('id'));
   var projectId = getUrlVars().id;
-  console.log(commit_id);
   $.ajax({
     type: "DELETE",
     // url: "projects",

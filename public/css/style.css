@@ -626,3 +626,13 @@ background: -ms-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1
 background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
 }
+
+.hidden{
+  display: none;
+}
+.place-holder-logo{
+  width: 30% !important;
+  left: 50% !important;
+  top: 10px !important;
+  margin-left: -16% !important;
+}
