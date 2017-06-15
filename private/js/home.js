@@ -5,6 +5,7 @@ $(document).ready(function(){
   });
 });
 
+
 function makeDropdown(array){
   var dropdown1 = document.getElementById('dropdown1')
   var dropdown3 = document.getElementById('dropdown3')
@@ -57,12 +58,11 @@ $('.logout_button').on('click', () => {
     type: "GET",
     url: "/users/logout",
     success: function(res){
-        if (res){
-          console.log("retrun of logout button", res);
-          window.location.replace('/')
-        } else{
-          console.log('Error');
-        }
+      if (res){
+        window.location.replace('/')
+      } else{
+        console.log('error');
+      }
     }
   })
 });
@@ -97,8 +97,9 @@ $('body').on('click', '.update-project', ()=>{
 
 $('#save_project_button').on('click', () => {
   let title = $("#new_project_title").val();
+  $("#new_project_title").val('');
   let description = $("#new_project_description").val();
-  console.log(title,description);
+  $("#new_project_description").val('');
   $.ajax({
     type: "POST",
     url: "/projects",
@@ -107,7 +108,7 @@ $('#save_project_button').on('click', () => {
       projectDescription: description
     },
     success: function(res){
-      console.log("return of new project button button",res);
+      location.reload();
     }
   })
 });

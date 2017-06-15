@@ -12,16 +12,18 @@ function getUrlVars(){
   return vars;
 }
 
+
 function makeCards(array){
   $('.master-container').empty();
   $('.card-container').empty();
   for (var i = 0; i < array.length; i++){
+    var commitID = array[i].id
     var widgetSrc = array[i].widget_url;
     var SubmittedBy = array[i].first_name + " " + array[i].last_name;
     var comment = array[i].commit_comment;
     var source = $("#Commit").html();
     var template = Handlebars.compile(source);
-    var context = {submitter: SubmittedBy, widget_url: widgetSrc, comments: comment};
+    var context = {submitter: SubmittedBy, widget_url: widgetSrc, comments: comment, id: commitID};
     var html= template(context);
     if(array[i].is_master){
       $('.master-container').append(html);
@@ -100,6 +102,19 @@ $(document).ready(function(){
     makeColaboratorCards(response)
   })
   addCommit();
+});
+
+$('body').on('click', '.delete-commit', () => {
+  var commitId = ($(event.target).closest('.exmaple-commit').attr('id'));
+  var projectId = getUrlVars().id;
+  $.ajax({
+    type: "DELETE",
+    // url: "projects",
+    data: {commit_id: commitId, project_id:  projectId},
+    success: function(res){
+      // makeCards(res);
+    }
+  });
 });
 
 function makeDropdown(array){

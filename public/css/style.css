@@ -626,3 +626,13 @@ body {
   background: radial-gradient(ellipse at center, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 1%, rgba(255,175,75,1) 27%, rgba(255,175,75,1) 38%, rgba(255,127,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff7f00', GradientType=1 );
 }
+
+.hidden{
+  display: none;
+}
+.place-holder-logo{
+  width: 30% !important;
+  left: 50% !important;
+  top: 10px !important;
+  margin-left: -16% !important;
+}
