@@ -37,10 +37,11 @@ router.post('/:projectId', function(req, res, next){
   knex('users')
   .select(['id', 'first_name', 'last_name', 'email'])
   .where('email', req.body.email)
+  .first()
   .then(function(addedUser){
     knex('permissions')
     .insert({
-      project_id: req.params.id,
+      project_id: req.params.projectId,
       allowed_user: addedUser.id
     })
     .where('project_id', req.params.projectId)
