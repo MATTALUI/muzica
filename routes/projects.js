@@ -38,7 +38,7 @@ router.get('/:id', function(req, res, next){
   knex('commits')
   .where('project_id', req.params.id)
   .join('users', 'commits.submitted_by','=','users.id')
-  .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+  .select(['commits.id','first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
   .then(function(commits){
     res.send(commits);
   });
