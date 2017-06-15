@@ -617,12 +617,12 @@ body {
   bottom:2%;
 }
 .nav-gradient {
-background: rgba(255,175,75,1);
-background: -moz-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
-background: -webkit-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-background: -o-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-background: -ms-linear-gradient(-45deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-background: linear-gradient(135deg, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
+  background: rgba(255,175,75,1);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 1%, rgba(255,175,75,1) 27%, rgba(255,175,75,1) 38%, rgba(255,127,0,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,175,75,1)), color-stop(1%, rgba(255,175,75,1)), color-stop(27%, rgba(255,175,75,1)), color-stop(38%, rgba(255,175,75,1)), color-stop(100%, rgba(255,127,0,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 1%, rgba(255,175,75,1) 27%, rgba(255,175,75,1) 38%, rgba(255,127,0,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 1%, rgba(255,175,75,1) 27%, rgba(255,175,75,1) 38%, rgba(255,127,0,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 1%, rgba(255,175,75,1) 27%, rgba(255,175,75,1) 38%, rgba(255,127,0,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 1%, rgba(255,175,75,1) 27%, rgba(255,175,75,1) 38%, rgba(255,127,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff7f00', GradientType=1 );
 }
