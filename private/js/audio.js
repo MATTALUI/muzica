@@ -123,16 +123,22 @@ function makeDropdown(array){
   array.map((ele,index,arr)=>{
     var li = document.createElement('li')
     var anchor = document.createElement('a')
+    var divider = document.createElement('li')
+    divider.setAttribute('class','divider')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
     anchor.innerHTML = ele.project_title
+    $(dropdown1).append(divider);
     $(li).append(anchor);
     $(dropdown1).append(li);
     })
     return array.map((ele,index,arr)=>{
       var li = document.createElement('li')
       var anchor = document.createElement('a')
+      var divider = document.createElement('li')
+      divider.setAttribute('class','divider')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
       anchor.innerHTML = ele.project_title
+      $(dropdown3).append(divider);
       $(li).append(anchor);
       $(dropdown3).append(li);
       })

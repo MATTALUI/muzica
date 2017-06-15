@@ -13,17 +13,23 @@ function makeDropdown(array){
   var dropdown3 = document.getElementById('dropdown3')
   array.map((ele,index,arr)=>{
     var li = document.createElement('li')
+    var divider = document.createElement('li')
     var anchor = document.createElement('a')
+    divider.setAttribute('class','divider')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
     anchor.innerHTML = ele.project_title
+    $(dropdown1).append(divider);
     $(li).append(anchor);
     $(dropdown1).append(li);
     })
     return array.map((ele,index,arr)=>{
       var li = document.createElement('li')
+      var divider = document.createElement('li')
       var anchor = document.createElement('a')
+      divider.setAttribute('class','divider')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
       anchor.innerHTML = ele.project_title
+      $(dropdown3).append(divider);
       $(li).append(anchor);
       $(dropdown3).append(li);
       })
