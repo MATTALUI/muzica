@@ -1,11 +1,9 @@
 $('#login').on ('click', ()=>{
-  // console.log("123");
   let email = $("#email").val();
   let pass = $("#pass").val();
   if(email==''||pass==''){
     return
   }
-  console.log(email,pass)
   $.ajax({
     type: "POST",
     url: "/users/login",

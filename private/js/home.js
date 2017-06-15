@@ -7,6 +7,8 @@ $(document).ready(function(){
 
 
 function makeDropdown(array){
+  $('#dropdown1').empty();
+  $('#dropdown3').empty();
   var dropdown1 = document.getElementById('dropdown1')
   var dropdown3 = document.getElementById('dropdown3')
   array.map((ele,index,arr)=>{
@@ -49,6 +51,7 @@ $('body').on('click', '.delete-project', () => {
     data: {projectId},
     success: function(res){
       makeCards(res);
+      makeDropdown(res)
     }
   });
 });
@@ -90,6 +93,7 @@ $('body').on('click', '.update-project', ()=>{
     data: dataObj,
     success: function(res){
       makeCards(res);
+      makeDropdown(res)
     }
   });
 });
