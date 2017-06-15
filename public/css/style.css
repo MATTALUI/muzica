@@ -61,6 +61,7 @@
   height: 100vh;
   background-size: cover;
   background-position: center;
+  padding-top: 1%;
   /*background-repeat: repeat;*/
 }
 
@@ -657,4 +658,10 @@ body {
 
 .production{
   margin-left: 15% !important;
+}
+
+.title-container > h3{
+  color: white;
+  background: transparent !important;
+  border-bottom: 5px solid #ff7f00 !important;
 }

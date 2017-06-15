@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $.get('projects', function(response){
-      console.log(response);
       makeCards(response);
       makeDropdown(response);
   });
@@ -11,9 +10,9 @@ $(document).ready(function(){
       addIframe(resp);
     });
   });
-  $.get('users/me', function(res){
-    console.log(res);
-    $('.title').innerText();
+  $.get('/users/me', function(res){
+    var name = ""+ res.first_name + ' '+ res.last_name +'';
+    $('.title').html('Welcome, '+name+'. ');
   });
 });
 
