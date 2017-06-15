@@ -9,7 +9,8 @@ const secret = 'secret';
 
 router.get('/', function(req,res,next){
 
-  let token = req.cookies.token || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4'
+  let token = req.cookies.token
+  // || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4'
   // this was just to generate a testing token
   // let aToken = jwt.sign({
   //   id: 1,
@@ -33,6 +34,13 @@ router.get('/', function(req,res,next){
     }
   });
 
+});
+router.get('/masters', function(req,res,next){
+  knex('commits')
+  .where('is_master', true)
+  .then(function(masters){
+    res.send(masters)
+  })
 });
 router.get('/:id', function(req, res, next){
   knex('commits')
@@ -176,7 +184,20 @@ router.delete('/', function(req, res, next){
   }
 
 });
-
+router.delete('/commit', function(req, res, next){
+  knex('commits')
+  .del()
+  .where('id', req.body.commit_id)
+  .then(function(){
+    knex('commits')
+    .where('project_id', req.body.project_id)
+    .join('users', 'commits.submitted_by','=','users.id')
+    .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+    .then(function(commits){
+      res.send(commits);
+    });
+  });
+});
 
 
 

@@ -34,6 +34,14 @@ exports.seed = function(knex, Promise) {
       widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tee-grizzley/from-the-d-to-the-a-feat-lil-yachty',
       is_master: true,
       commit_comment: 'lil yachty is my homie!1!!1'
+    },
+    {
+      id: 5,
+      project_id: 5,
+      submitted_by: 1,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/mattalui/space-cats',
+      is_master: true,
+      commit_comment: 'This is the master. I want the project to capture this essence.'
     }]);
     }).then(function(){
       return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM commits));");

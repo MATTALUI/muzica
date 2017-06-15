@@ -33,6 +33,24 @@ function makeCards(array){
   }
 }
 
+function makeColaboratorCards(array){
+  console.log(array);
+  $('#collaborators-list').empty();
+  // $('.card-container').empty();
+  var list = document.getElementById('collaborators-list')
+  for (var i = 0; i < array.length; i++){
+      var li = document.createElement('li');
+      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name + ' ' + array[i].sc_username
+      li.setAttribute('data',("userId:"+array[i].id))
+      li.setAttribute('id',array[i].id)
+      if(!(document.getElementById(array[i].id))){
+        list.appendChild(li)
+      }
+      // div.innerHTML=array
+      // $('.collaborator-container').append(html);
+  }
+}
+
 function clearForm(){
   $('#track').val('');
   $('#soundNotes').val('');
@@ -79,6 +97,10 @@ $(document).ready(function(){
   $.get('projects', function(response){
       makeDropdown(response)
   });
+  $.get(`/permissions/${projectId}`,(response)=>{
+    // console.log('whos your user!!!!',response);
+    makeColaboratorCards(response)
+  })
   addCommit();
 });
 
@@ -127,6 +149,24 @@ $('#logout_button').on('click', () => {
       } else{
         console.log('Error');
       }
+    }
+  })
+});
+
+$('#add-collaborator-button').on('click', () => {
+  var projectId = getUrlVars().id;
+  let email = $("#collaborator-email").val();
+  console.log(email);
+  $("#collaborator-email").val('');
+  $.ajax({
+    type: "POST",
+    url: `permissions/${projectId}`,
+    data: {
+      email: email
+    },
+    success: function(res){
+      makeColaboratorCards(res)
+      console.log("return of add collaborators button button",res);
     }
   })
 });

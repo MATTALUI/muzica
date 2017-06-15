@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
         first_name: 'Matt',
         last_name: 'Hummer',
         email: 'cats@cats.com',
-        hashed_password: '$2a$08$Kb7JzChJiBv9de6t9NB6V.QKi.w87WD/3gv3PxEH4iAKrNNhbLbjW',
+        hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
         sc_username: 'mattalui'
       },
     {
@@ -16,7 +16,7 @@ exports.seed = function(knex, Promise) {
       first_name: 'Adam',
       last_name: 'Smith',
       email: 'asmith13194@gmail.com',
-      hashed_password: '$2a$08$Kb7JzChJiBv9de6t9NB6V.QKi.w87WD/3gv3PxEH4iAKrNNhbLbjW',
+      hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
       sc_username: 'smitty14'
     },
     {
@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
       first_name: 'Creative',
       last_name: 'Cad',
       email: 'cad@cad.com',
-      hashed_password: '$2a$08$Kb7JzChJiBv9de6t9NB6V.QKi.w87WD/3gv3PxEH4iAKrNNhbLbjW',
+      hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
       sc_username: 'helloworldhello'
     },
     {
@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
       first_name: 'Filler',
       last_name: 'Frank',
       email: 'frank@frank.com',
-      hashed_password: '$2a$08$Kb7JzChJiBv9de6t9NB6V.QKi.w87WD/3gv3PxEH4iAKrNNhbLbjW',
+      hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
       sc_username: 'fillerfrank'
     }]);
 
