@@ -18,8 +18,6 @@ router.post('/login', (req, res, next) => {
     .where('email', req.body.email)
     .first()
     .then(function(user) {
-      console.log(user);
-      console.log("search result from db",user);
       if (Object.keys(user).length === undefined) {
         res.setHeader('Content-Type', 'text/plain');
         res.send("Incorrect email or password");
@@ -28,7 +26,7 @@ router.post('/login', (req, res, next) => {
           if (err) {
             return res.send('Invalid email or password')
           } else if (decode===true){
-            deleter 
+            delete user.hashed_password;
             var token = jwt.sign(user, 'secret');
             res.cookie('token', token, {
               httpOnly: true
