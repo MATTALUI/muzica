@@ -1,13 +1,14 @@
 $(document).ready(function(){
   $.get('projects', function(response){
+      console.log(response);
       makeCards(response);
       makeDropdown(response);
   });
   $.get('permissions/me', function(response){
     makeOtherCards(response);
     makeDropdownWithCollabs(response)
-    $.get('projects/masters', function(response){
-      addIframe(response);
+    $.get('projects/masters', function(resp){
+      addIframe(resp);
     });
   });
 });
