@@ -5,10 +5,9 @@ $(document).ready(function(){
   });
   $.get('permissions/me', function(response){
     makeOtherCards(response);
-  });
-  $.get('projects/masters', function(response){
-    console.log(response);
-    addIframe(response);
+    $.get('projects/masters', function(response){
+      addIframe(response);
+    });
   });
 });
 
@@ -83,6 +82,9 @@ $('body').on('click', '.delete-project', () => {
       makeCards(res);
       $.get('permissions/me', function(response){
         makeOtherCards(response);
+        $.get('projects/masters', function(response){
+          addIframe(response);
+        });
       });
     }
   });
@@ -127,6 +129,9 @@ $('body').on('click', '.update-project', ()=>{
       makeCards(res);
       $.get('permissions/me', function(response){
         makeOtherCards(response);
+        $.get('projects/masters', function(response){
+          addIframe(response);
+        });
       });
     }
   });
