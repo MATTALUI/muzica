@@ -13,16 +13,16 @@ function makeDropdown(array){
     var anchor = document.createElement('a')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
     anchor.innerHTML = ele.project_title
-    $(dropdown1).append(li);
     $(li).append(anchor);
+    $(dropdown1).append(li);
     })
     return array.map((ele,index,arr)=>{
       var li = document.createElement('li')
       var anchor = document.createElement('a')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
       anchor.innerHTML = ele.project_title
-      $(dropdown3).append(li);
       $(li).append(anchor);
+      $(dropdown3).append(li);
       })
 }
 
