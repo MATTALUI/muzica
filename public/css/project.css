@@ -9,6 +9,13 @@ h3 {
 .big-boi, .commit-history{
   height: 120vh;
 }
+
+@media (max-width: 600px) {
+  .big-boi {
+    height: 50vh;
+  }
+}
+
 .big-boi{
   margin: 0 0 0 0;
 }
@@ -22,8 +29,7 @@ h3 {
 
 .main-body{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4c/Roland_TR-808_%28large%29.jpg");
-  width: 100%;
-  background-size: 115% 107%;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -41,7 +47,6 @@ h3 {
   bottom: 2%;
   left: 2%;
   margin-top: 0%;
-  /*padding-bottom: 5%;*/
 }
 
 .nav-wrapper{
