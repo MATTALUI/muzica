@@ -60,6 +60,14 @@ router.post('/:projectId', function(req, res, next){
     });
   })
 });
+router.delete('/:projectId', function(req, res, next){
+  knex('permissions')
+  .del()
+  .where('allowed_user', req.body.userId)
+  .then(function(){
+    res.send('atll do, pig')
+  });
+});
 
 
 
