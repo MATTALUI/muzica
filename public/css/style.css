@@ -22,7 +22,7 @@
 }
 
 .section, .no-pad-bot {
-   margin-right: 500px;
+   /*margin-right: 500px;*/
 }
 
 .btn:focus, .btn-large:focus,
@@ -49,13 +49,33 @@
 .input-field input[type=password]:focus + label {
   color: #ff7f00;
 }
-.footer-808 {
+/*.footer-808 {
   background-image: url("../images/Opacity60Logo60.jpg");
   width: 100%;
   background-size: 100% 100%;
-  /*height: 250px;*/
   background-position: top;
+}*/
+.body_container{
+  background-image: url("../images/Opacity60Logo60.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  /*background-repeat: repeat;*/
 }
+
+.create-account-container{
+  margin: auto;
+}
+.login-button-container{
+  margin-left: 8%;
+}
+
+.project-container{
+  height: 80vh;
+  overflow: scroll;
+}
+
 .login-box {
   opacity: .95;
   background-color: #424242;
@@ -381,7 +401,7 @@ body {
   font-family: "Roboto";
   color: #383838;
   background: rgba(66, 66, 66, .9);
-  width: 75%;
+  /*width: 75%;*/
   margin: auto;
 
 }

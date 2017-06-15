@@ -21,8 +21,8 @@ function makeDropdown(array){
     var anchor = document.createElement('a')
     anchor.setAttribute('href',('/production.html?id='+ele.id))
     anchor.innerHTML = ele.project_title
-    $(dropdown1).append(li);
     $(li).append(anchor);
+    $(dropdown1).append(li);
     })
     return array.map((ele,index,arr)=>{
       console.log(ele);
@@ -30,8 +30,8 @@ function makeDropdown(array){
       var anchor = document.createElement('a')
       anchor.setAttribute('href',('/production.html?id='+ele.id))
       anchor.innerHTML = ele.project_title
-      $(dropdown3).append(li);
       $(li).append(anchor);
+      $(dropdown3).append(li);
       })
 }
 
@@ -42,3 +42,19 @@ function makeDropdown(array){
     $('.modal').modal();
   }); // end of document ready
 })(jQuery); // end of jQuery name space
+
+$('.logout_button').on('click', () => {
+  console.log("start");
+  $.ajax({
+    type: "GET",
+    url: "/users/logout",
+    success: function(res){
+        if (res){
+          console.log("retrun of logout button", res);
+          window.location.replace('/')
+        } else{
+          console.log('Error');
+        }
+    }
+  })
+});
