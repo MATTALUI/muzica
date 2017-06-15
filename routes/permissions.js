@@ -32,6 +32,15 @@ router.get('/me', function(req, res, next){
     }catch(err){}
   });
 });
+router.get('/:projectId', function(req,res, next){
+  knex('permissions')
+  .select(['users.id', 'first_name', 'last_name', 'email'])
+  .where('project_id', req.params.projectId)
+  .join('users', 'users.id', 'allowed_user')
+  .then(function(permissablePeople){
+    res.send(permissablePeople);
+  })
+});
 router.post('/:projectId', function(req, res, next){
   //req.body needs the project_id and the email of the user that they want to add+
   knex('users')
