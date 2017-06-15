@@ -62,6 +62,7 @@ router.patch('/masters/:projectId', function(req, res, next){
     });
   });
 });
+
 router.get('/:id', function(req, res, next){
   knex('commits')
   .where('project_id', req.params.id)
