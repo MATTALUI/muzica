@@ -20,6 +20,7 @@ router.post('/login', (req, res, next) => {
       console.log(user);
       console.log("search result from db",user);
       if (Object.keys(user).length === undefined) {
+        console.log("right here");
         res.setHeader('Content-Type', 'text/plain');
         res.send("Incorrect email or password");
       } else {
@@ -43,7 +44,7 @@ router.post('/login', (req, res, next) => {
             //   .then(projects => {
             //     console.log(projects);
             // console.log("ready to redirect");
-              // return res.redirect('../home.html')
+              // return res.redirect('/home.html')
                 return res.send(true)
 
             //     // res.sendFile(path.join( __dirname+'/home.html'));
