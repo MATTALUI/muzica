@@ -38,9 +38,14 @@ h3 {
 
 .new-commit{
   position: fixed;
-  bottom: 1%;
-  left: .5%;
-  padding-bottom: 5%;
+  bottom: 2%;
+  left: 2%;
+  margin-top: 0%;
+  /*padding-bottom: 5%;*/
+}
+
+.nav-wrapper{
+  width:95%;
 }
 
 .exmaple-commit{

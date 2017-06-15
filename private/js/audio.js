@@ -101,6 +101,7 @@ function makeDropdown(array){
       })
 }
 
+
 $('#logout_button').on('click', () => {
   $.ajax({
     type: "GET",
