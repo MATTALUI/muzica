@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const users = require('./routes/users.js');
 const projects = require('./routes/projects.js');
+const permissions = require('./routes/permissions.js');
 const jwt = require('jsonwebtoken');
 
 if (process.env.NODE_ENV !== 'production') {
@@ -49,6 +50,7 @@ app.use(function(req, res, next) {
 app.use(express.static('public'));
 app.use('/projects', projects);
 app.use('/users', users);
+app.use('/permissions', permissions);
 app.use('/',(req,res,next)=>{
   console.log(req.cookies.token);
   var token = req.cookies.token;
