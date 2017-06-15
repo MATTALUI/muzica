@@ -16,6 +16,11 @@ exports.seed = function(knex, Promise) {
         project_owner: 2,
         project_title: 'AtomBomb',
         project_description: 'The name says it all...'
+      },
+      {
+        project_owner: 3,
+        project_title: 'A True collaboration',
+        project_description: 'A project to test the potential of Muzica\'s collaboration powers!'
       }]);
 
     }).then(function(){
