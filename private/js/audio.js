@@ -14,6 +14,7 @@ function getUrlVars(){
 
 
 function makeCards(array){
+  console.log(array);
   $('.master-container').empty();
   $('.card-container').empty();
   for (var i = 0; i < array.length; i++){
@@ -29,6 +30,13 @@ function makeCards(array){
       $('.master-container').append(html);
     }else{
       $('.card-container').append(html);
+    }
+    if($('.master-container').children().length > 0){
+      let master = $('.master-container').children()[0];
+      let content = $(master).children()[$(master).children().length -1];
+      let masterButton = $(content).children()[$(content).children().length-1]
+      $(masterButton).hide();
+      // console.log(masterButton);
     }
   }
 }
@@ -115,6 +123,21 @@ $('body').on('click', '.delete-commit', () => {
       makeDropdown(res)
     }
   });
+});
+$('body').on('click', '.make-master-button', ()=>{
+  var projectId = getUrlVars().id;
+  let commitId = $(event.target).closest('.exmaple-commit').attr('id');
+  // console.log(`pid: ${projectId}\ncid: ${commitId}`);
+  $.ajax({
+    type: 'PATCH',
+    url: `/projects/masters/${projectId}`,
+    data: {commitId},
+    success: function(response){
+      // console.log(response);
+      makeCards(response)
+    }
+  })
+
 });
 
 function makeDropdown(array){
