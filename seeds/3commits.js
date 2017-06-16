@@ -23,7 +23,7 @@ exports.seed = function(knex, Promise) {
       id: 3,
       project_id: 1,
       submitted_by: 2,
-      widget_url: 'https://soundcloud.com/asherpaulroth/05-more-cowbell-prod-blended',
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/asherpaulroth/05-more-cowbell-prod-blended',
       is_master: true,
       commit_comment: 'Just some cowbell for yuh!'
     },
