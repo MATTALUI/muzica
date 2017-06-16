@@ -31,13 +31,11 @@ h3 {
   width: 100%;
 }
 
-#collaborators-list{
-  background: #424242;
-}
 
 #collaborators-list li{
+  background: #424242;
   margin-bottom: 0.5%;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 
 .delete-collaborator{
