@@ -31,13 +31,11 @@ h3 {
   width: 100%;
 }
 
-#collaborators-list{
-  background: #424242;
-}
 
 #collaborators-list li{
+  background: #424242;
   margin-bottom: 0.5%;
-  border-bottom: 2px solid transparent;
+  border-bottom: 3px solid transparent;
 }
 
 .delete-collaborator{
@@ -119,6 +117,8 @@ h3 {
 
 .exmaple-commit .card-content{
   background: #424242;
+  border-top: 1px solid silver;
+  border-bottom: 3px solid #2d2d2d;
 }
 .nav-gradient {
   background: rgba(255,175,75,1);
