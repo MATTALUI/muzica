@@ -665,7 +665,7 @@ body {
 
 
 .production{
-  margin-left: 11vw !important;
+  margin-left: 0 !important;
 }
 
 .title-container > h3{
