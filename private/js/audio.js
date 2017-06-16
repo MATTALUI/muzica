@@ -48,7 +48,7 @@ function makeColaboratorCards(array){
       var li = document.createElement('li');
       li.innerHTML = array[i].first_name+ ' ' + array[i].last_name +
       //  ' ' + array[i].sc_username +
-      '\n<button class="delete-collaborator button">REMOVE FROM PROJECT</button>'
+      '\n<button class="delete-collaborator button">REMOVE</button>'
       li.setAttribute('data',("userId:"+array[i].id))
       li.setAttribute('id','collab'+array[i].id)
       li.setAttribute('class','center-align')
@@ -124,7 +124,6 @@ $('body').on('click', '.delete-commit', () => {
     data: {commit_id: commitId, project_id:  projectId},
     success: function(res){
       makeCards(res);
-      makeDropdown(res)
     }
   });
 });

@@ -682,3 +682,19 @@ body {
 .exmaple-commit .card-content{
   background: #424242;
 }
+
+.login-headers{
+  padding-top: 2%;
+}
+.login-headers h3{
+  text-shadow: 1px 1px 2px #ff7f00;
+}
+.tag-line{
+  margin-top: 4%;
+}
+.tag-line h4{
+  text-shadow: 1px 1px 2px #ff7f00;
+}
+.text-shadow{
+  text-shadow: 1px 1px 2px #ff7f00;
+}
