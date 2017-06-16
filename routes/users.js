@@ -34,7 +34,10 @@ router.post('/login', (req, res, next) => {
           }
         });
       }
-    });
+    })
+    .catch(err=>{
+      return res.send("invalid")
+    })
 });
 
 router.post('/createuser', (req, res, next) => {
@@ -42,7 +45,7 @@ router.post('/createuser', (req, res, next) => {
     .select('*')
     .where('email', req.body.email)
     .then(function(user) {
-      if (Object.keys(user).length > 0) {
+      if (user.email!==undefined||user.email!==null) {
         res.setHeader('Content-Type', 'text/plain');
         return res.send("Invalid email, already taken");
       } else {
