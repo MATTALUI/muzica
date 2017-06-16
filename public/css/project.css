@@ -36,6 +36,9 @@ h3 {
   background: #424242;
   margin-bottom: 0.5%;
   border-bottom: 3px solid transparent;
+  line-height: .8rem;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .delete-collaborator{
