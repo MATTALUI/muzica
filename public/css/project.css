@@ -32,6 +32,25 @@ h3 {
   margin: 0 0 0 0;
 }
 
+.modal-footer{
+  background-color: #424242;
+}
+
+.collab-form-css{
+  top:30% !important;
+  height:31% !important;
+}
+
+.commit-form-css{
+  top:20% !important;
+  height:62% !important;
+}
+
+.btn-flat{
+  color: white;
+  background-color: #ff7f00;
+}
+
 .commit-history{
   margin: 0 0 0 0;
   border-left: 2px solid #424242;

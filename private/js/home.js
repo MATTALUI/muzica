@@ -117,11 +117,12 @@ $('body').on('click', '.delete-project', () => {
       makeCards(res);
       $.get('permissions/me', function(response){
         makeOtherCards(response);
+        makeDropdown(res);
+        makeDropdownWithCollabs(response);
         $.get('projects/masters', function(resp){
           addIframe(resp);
         });
       });
-      makeDropdown(res)
     }
   });
 });
@@ -165,11 +166,12 @@ $('body').on('click', '.update-project', ()=>{
       makeCards(res);
       $.get('permissions/me', function(response){
         makeOtherCards(response);
+        makeDropdown(res);
+        makeDropdownWithCollabs(response);
         $.get('projects/masters', function(response){
           addIframe(response);
         });
       });
-      makeDropdown(res);
     }
   });
 });
