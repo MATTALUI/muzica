@@ -2,12 +2,12 @@ $(document).ready(function(){
   $.get('projects', function(response){
       makeCards(response);
       makeDropdown(response);
-  });
-  $.get('permissions/me', function(response){
-    makeOtherCards(response);
-    makeDropdownWithCollabs(response)
-    $.get('projects/masters', function(resp){
-      addIframe(resp);
+    $.get('permissions/me', function(resp){
+      makeOtherCards(resp);
+      makeDropdownWithCollabs(resp);
+      $.get('projects/masters', function(res){
+        addIframe(res);
+      });
     });
   });
   $.get('/users/me', function(res){
