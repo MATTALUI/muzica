@@ -15,7 +15,15 @@ h3 {
     height: 50vh;
   }
 }
-
+.muzica-logo{
+  content: url("../muzicalogo5.png");
+  background-repeat: no-repeat;
+  width: 20%; /*or your image's width*/
+  height: 100%; /*or your image's height*/
+  /*border: solid 1px #424242;*/
+  border-radius: px;
+  margin-top: 3px;
+}
 .collaborator-container{
   position: relative;
   width: 100%;
@@ -77,11 +85,11 @@ h3 {
 }
 .nav-gradient {
   background: rgba(255,175,75,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%, rgba(255,175,75,1)), color-stop(19%, rgba(255,166,61,1)), color-stop(21%, rgba(255,165,60,1)), color-stop(100%, rgba(255,127,0,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(255,175,75,1) 1%, rgba(255,166,61,1) 19%, rgba(255,165,60,1) 21%, rgba(255,127,0,1) 100%);
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,175,75,1)), color-stop(14%, rgba(255,175,75,1)), color-stop(46%, rgba(255,127,0,1)), color-stop(100%, rgba(255,127,0,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
+  background: radial-gradient(ellipse at center, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff7f00', GradientType=1 );
 }
