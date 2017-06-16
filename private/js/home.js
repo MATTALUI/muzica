@@ -6,9 +6,13 @@ $(document).ready(function(){
   $.get('permissions/me', function(response){
     makeOtherCards(response);
     makeDropdownWithCollabs(response)
-    $.get('projects/masters', function(response){
-      addIframe(response);
+    $.get('projects/masters', function(resp){
+      addIframe(resp);
     });
+  });
+  $.get('/users/me', function(res){
+    var name = ""+ res.first_name + ' '+ res.last_name +'';
+    $('.title').html('Welcome, '+name+'. ');
   });
 });
 
