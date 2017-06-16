@@ -10,10 +10,6 @@ exports.seed = function(knex, Promise) {
         },
         {
           project_id: 4,
-          allowed_user: 2,
-        },
-        {
-          project_id: 4,
           allowed_user: 4,
         },
         {
@@ -22,11 +18,28 @@ exports.seed = function(knex, Promise) {
         },
         {
           project_id: 5,
-          allowed_user: 2
-        },
-        {
-          project_id: 5,
           allowed_user: 4
+        },{
+          project_id: 8,
+          allowed_user: 6
+        },{
+          project_id: 7,
+          allowed_user: 6
+        },{
+          project_id: 6,
+          allowed_user: 2
+        },{
+          project_id: 5,
+          allowed_user: 2
+        },{
+          project_id: 4,
+          allowed_user: 2
+        },{
+          project_id: 2,
+          allowed_user: 2
+        },{
+          project_id: 1,
+          allowed_user: 2
         }
       ]);
   })

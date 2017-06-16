@@ -23,15 +23,15 @@ exports.seed = function(knex, Promise) {
       id: 3,
       project_id: 1,
       submitted_by: 2,
-      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tee-grizzley/from-the-d-to-the-a-feat-lil-yachty',
+      widget_url: 'https://soundcloud.com/asherpaulroth/05-more-cowbell-prod-blended',
       is_master: true,
-      commit_comment: 'The OG-official master track of this project!'
+      commit_comment: 'Just some cowbell for yuh!'
     },
     {
       id: 4,
       project_id: 2,
       submitted_by: 2,
-      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tee-grizzley/from-the-d-to-the-a-feat-lil-yachty',
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tevin-beckles/no-role-modelz-yl-ft-jcole',
       is_master: true,
       commit_comment: 'lil yachty is my homie!1!!1'
     },
@@ -74,6 +74,78 @@ exports.seed = function(knex, Promise) {
       widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/tony-neuhoff/biggie-smalls-feat-thomas-the',
       is_master: true,
       commit_comment: 'Biggie is my hero!'
+    },
+    {
+      id: 10,
+      project_id: 6,
+      submitted_by: 5,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/alextrainormusic/the-ballad-of-eddy-mcbones-1',
+      is_master: true,
+      commit_comment: 'Music is cool!'
+    },
+    {
+      id: 11,
+      project_id: 6,
+      submitted_by: 5,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/alextrainormusic/nasty-reputation',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 12,
+      project_id: 6,
+      submitted_by: 5,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/alextrainormusic/real',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 13,
+      project_id: 6,
+      submitted_by: 5,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/alextrainormusic/life-and-marvelous-times',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 14,
+      project_id: 6,
+      submitted_by: 5,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/alextrainormusic/camirillo-brillo-cover-frank',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 15,
+      project_id: 6,
+      submitted_by: 5,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/alextrainormusic/one-night-only-featuring-todd',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 16,
+      project_id: 7,
+      submitted_by: 6,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/childish-gambino/redbone',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 17,
+      project_id: 8,
+      submitted_by: 7,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/futurevevo22/kodak-black-tunnel-vision',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 18,
+      project_id: 8,
+      submitted_by: 7,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/sandpeoplecologne/cloud-9?in=chillhopdotcom/sets/lofihiphop',
+      is_master: false,
+      commit_comment: 'Music is cool!'
+    },{
+      id: 19,
+      project_id: 3,
+      submitted_by: 2,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/coolioofficial/gangstas-paradise-feat-l-v',
+      is_master: true,
+      commit_comment: 'Music is cool!'
     }]);
     }).then(function(){
       return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM commits));");
