@@ -647,6 +647,10 @@ body {
   margin-left: -16% !important;
 }
 
+.btn-floating{
+  z-index: 0 !important;
+}
+
 .validate, .valid{
   color: white;
   box-shadow: #ff7f00;
