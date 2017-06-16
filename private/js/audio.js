@@ -88,7 +88,7 @@ function addCommit(){
           is_master: ''
         }
         makeCards(res);
-        makeDropdown(res)
+        // makeDropdown(res)
         clearForm();
       }
     });
