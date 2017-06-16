@@ -40,9 +40,11 @@ function makeCards(array){
 }
 
 function makeColaboratorCards(array){
+  var show = document.getElementById('hiding-spot')
   $('#collaborators-list').empty();
   var list = document.getElementById('collaborators-list')
   for (var i = 0; i < array.length; i++){
+      // show.style.display = "inline"
       var li = document.createElement('li');
       li.innerHTML = array[i].first_name+ ' ' + array[i].last_name +
       //  ' ' + array[i].sc_username +
