@@ -32,8 +32,17 @@ h3 {
 }
 
 #collaborators-list{
-  color: black;
-  background-color: white;
+  background: #ff7f00;
+}
+
+#collaborators-list li{
+  margin-bottom: 0.5%;
+  border-bottom: 2px solid transparent;
+}
+
+.delete-collaborator{
+  background: #424242;
+  margin-left: 40%;
 }
 
 .big-boi{

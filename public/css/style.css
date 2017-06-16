@@ -683,3 +683,7 @@ body {
 .exmaple-commit .card-content{
   background: #424242;
 }
+
+.login-headers{
+  padding-top: 2%;
+}
