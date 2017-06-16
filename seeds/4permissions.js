@@ -29,7 +29,6 @@ exports.seed = function(knex, Promise) {
           allowed_user: 4
         }
       ]);
-
   })
   .then(function(){
       return knex.raw("SELECT setval('permissions_id_seq', (SELECT MAX(id) FROM permissions));");

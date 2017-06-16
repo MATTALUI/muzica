@@ -27,6 +27,8 @@ app.use(function(req, res, next) {
 
 
 
+//commented out; we'll finish this in the future...
+
 //redirect for users with tokens
 // app.use('/',(req,res,next)=>{
 //   console.log(req.cookies);
@@ -52,13 +54,11 @@ app.use('/projects', projects);
 app.use('/users', users);
 app.use('/permissions', permissions);
 app.use('/',(req,res,next)=>{
-  console.log(req.cookies.token);
   var token = req.cookies.token;
   jwt.verify(token, 'secret', function(err, decoded) {
     if(err){
       console.log(err);
     }
-  console.log(decoded)
 });
   next()
 })
