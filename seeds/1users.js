@@ -34,6 +34,28 @@ exports.seed = function(knex, Promise) {
       email: 'frank@frank.com',
       hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
       sc_username: 'fillerfrank'
+    },
+    {
+      id: 5,
+      first_name: 'Alex',
+      last_name: 'Trainor',
+      email: 'alex@gmail.com',
+      hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
+      sc_username: 'alextrainormusic'
+    },{
+      id: 6,
+      first_name: 'Donald',
+      last_name: 'Glover',
+      email: 'donald@gmail.com',
+      hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
+      sc_username: 'childish-gambino'
+    },{
+      id: 7,
+      first_name: 'World Star',
+      last_name: 'Hip Hop',
+      email: 'worldstar@gmail.com',
+      hashed_password: '$2a$08$TQJ7CdZsvefbM/.E/TM4ce779YFog/4YwJLrKP3zz2Hr1OVx8Q0aW',
+      sc_username: 'futurevevo22'
     }]);
 
   })
