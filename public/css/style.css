@@ -58,7 +58,7 @@
 .body_container{
   background-image: url("../images/Opacity60Logo60.jpg");
   width: 100vw;
-  height: 100vh;
+  height: 93vh;
   background-size: cover;
   background-position: center;
   padding-top: 1%;
@@ -222,7 +222,7 @@ h1 {
 	top: 0;
 	/*width: 100%;*/
 	/* Full width */
-	height: 100%;
+	height: 50%;
 	/* Full height */
 	overflow: auto;
 	/* Enable scroll if needed */
@@ -232,12 +232,16 @@ h1 {
   margin-top: 10%;
 }
 
+.gangsterrr{
+  top:10% !important;
+  height:44%;
+}
 
 /* Modal Content/Box */
 
 .modal-content {
 	background-color: #424242;
-	margin: 15% auto;
+	/*margin: 15% auto;*/
 	/* 15% from the top and centered */
 	padding: 1.2rem;
 	max-width: 100%;
@@ -370,7 +374,7 @@ h1 {
 	-webkit-animation-duration: 0.6s;
 	animation-timing-function: ease;
 	-webkit-animation-timing-function: ease;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 
 	visibility: visible !important;
 }
