@@ -59,6 +59,14 @@ exports.seed = function(knex, Promise) {
       widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/mattalui/space-cats',
       is_master: false,
       commit_comment: 'The cowbell sounded horrible, so I took I back out.'
+    },
+    {
+      id: 8,
+      project_id: 5,
+      submitted_by: 4,
+      widget_url: 'https://w.soundcloud.com/player/?url=https://soundcloud.com/cashmerecat/forevercashmere',
+      is_master: false,
+      commit_comment: 'Maybe we could sample from this?'
     }]);
     }).then(function(){
       return knex.raw("SELECT setval('commits_id_seq', (SELECT MAX(id) FROM commits));");
