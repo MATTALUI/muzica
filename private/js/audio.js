@@ -141,8 +141,16 @@ $('body').on('click', '.make-master-button', ()=>{
 });
 $('body').on('click', '.delete-collaborator', ()=>{
   var projectId = getUrlVars().id;
+  let itemId = $(event.target).closest('li').attr('id');
   let collabId = Number($(event.target).closest('li').attr('id').split('collab')[1]);
-  console.log(projectId,collabId);
+  $.ajax({
+    type: 'DELETE',
+    url: `/permissions/${projectId}`,
+    data: {userId: collabId},
+    success: function(response){
+      $(`#${itemId}`).remove();
+    }
+  });
 });
 
 function makeDropdownWithCollabs(array){
