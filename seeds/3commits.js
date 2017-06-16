@@ -43,7 +43,6 @@ exports.seed = function(knex, Promise) {
       is_master: true,
       commit_comment: 'This is the master. I want the project to capture this essence.'
     },
-    // https://soundcloud.com/mattalui/catswithcowbell
     {
       id: 6,
       project_id: 5,
