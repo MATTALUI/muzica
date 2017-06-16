@@ -72,6 +72,7 @@ router.delete('/:projectId', function(req, res, next){
   knex('permissions')
   .del()
   .where('allowed_user', req.body.userId)
+  .where('project_id', req.params.projectId)
   .then(function(){
     res.send('atll do, pig')
   });
