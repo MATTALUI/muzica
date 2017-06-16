@@ -28,15 +28,6 @@ router.post('/login', (req, res, next) => {
             res.cookie('token', token, {
               httpOnly: true
             });
-            // console.log(req.cookies);
-            // console.log(user.id);
-            // knex('projects')
-            //   .select('*')
-            //   .where('user_id', 'user.id')
-            //   .then(projects => {
-            //     console.log(projects);
-            // console.log("ready to redirect");
-              // return res.redirect('/home.html')
                 return res.send(true)
           }else{
             return res.send(false)
@@ -65,7 +56,6 @@ router.post('/createuser', (req, res, next) => {
               .returning('*')
               .insert(req.body)
               .then(new_user=>{
-                console.log("this is what sends when we create a user",new_user);
                 let token = jwt.sign(new_user[0], 'secret');
                 res.cookie('token', token, {
                   httpOnly: true
@@ -83,7 +73,6 @@ router.post('/createuser', (req, res, next) => {
 
 router.get('/me', function(req, res, next){
   let token = req.cookies.token;
-  // || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RfbmFtZSI6Ik1hdHQiLCJsYXN0X25hbWUiOiJIdW1tZXIiLCJlbWFpbCI6ImNhdHNAY2F0cy5jb20iLCJoYXNoZWRfcGFzc3dvcmQiOiIkMmEkMDgkS2I3SnpDaEppQnY5ZGU2dDlOQjZWLlFLaS53ODdXRC8zZ3YzUHhFSDRpQUtyTk5oYkxialciLCJzY191c2VybmFtZSI6ImhlbGxvd29ybGRoZWxsbyIsImlhdCI6MTQ5NzQ2ODk1NH0.AUK0W_XMuLkhOqldmd9yE_PL3ZFxRpC0gDrrkpVHAq4';
   try{
     jwt.verify(token, secret, function(err, userInfo){
       if(err){
