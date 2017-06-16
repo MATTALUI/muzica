@@ -17,6 +17,7 @@ $('#login').on ('click', ()=>{
           console.log(res);
           window.location.replace('../home.html')
         } else{
+          alert('Incorrect email or password')
           console.log('Incorrect email or password');
         }
     }
