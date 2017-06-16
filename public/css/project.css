@@ -5,6 +5,8 @@ nav{
 }
 h3 {
   color: white;
+  background: transparent !important;
+  border-bottom: 5px solid #ff7f00 !important;
 }
 .big-boi, .commit-history{
   height: 120vh;
@@ -38,10 +40,29 @@ h3 {
   margin: 0 0 0 0;
 }
 
+.modal-footer{
+  background-color: #424242;
+}
+
+.collab-form-css{
+  top:30% !important;
+  height:31% !important;
+}
+
+.commit-form-css{
+  top:20% !important;
+  height:62% !important;
+}
+
+.btn-flat{
+  color: white;
+  background-color: #ff7f00;
+}
+
 .commit-history{
   margin: 0 0 0 0;
-  border-left: 4px solid grey;
-  background-color: rgba(66, 66, 66, 0.8);
+  border-left: 2px solid #424242;
+  /*background-color: rgba(255, 107, 0, 0.2); rgba(0, 0, 0, 0)*/
   overflow: scroll;
 }
 
@@ -52,7 +73,6 @@ h3 {
 }
 
 .card{
-  padding: 10px;
   opacity: 1;
 }
 
@@ -80,8 +100,12 @@ h3 {
 
 .exmaple-commit{
   margin-top: 0%;
-  background-color: #424242;
+  background-color: #2d2d2d;
   color: white;
+}
+
+.exmaple-commit .card-content{
+  background: #424242;
 }
 .nav-gradient {
   background: rgba(255,175,75,1);
@@ -92,4 +116,8 @@ h3 {
   background: -ms-radial-gradient(center, ellipse cover, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
   background: radial-gradient(ellipse at center, rgba(255,175,75,1) 0%, rgba(255,175,75,1) 14%, rgba(255,127,0,1) 46%, rgba(255,127,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff7f00', GradientType=1 );
+}
+.card-container{
+  padding-left: 0px !important;
+  padding-right: 5px !important;
 }

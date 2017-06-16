@@ -59,9 +59,10 @@
 .body_container{
   background-image: url("../images/Opacity60Logo60.jpg");
   width: 100vw;
-  height: 100vh;
+  height: 93vh;
   background-size: cover;
   background-position: center;
+  padding-top: 1%;
   /*background-repeat: repeat;*/
 }
 
@@ -71,7 +72,7 @@
 .login-button-container{
   margin-left: 8%;
 }
-/*------------------------------------------*/
+
 .project-container{
   height: 80vh;
   width: 60vw;
@@ -222,7 +223,7 @@ h1 {
 	top: 0;
 	/*width: 100%;*/
 	/* Full width */
-	height: 100%;
+	height: 50%;
 	/* Full height */
 	overflow: auto;
 	/* Enable scroll if needed */
@@ -232,12 +233,16 @@ h1 {
   margin-top: 10%;
 }
 
+.gangsterrr{
+  top:10% !important;
+  height:44%;
+}
 
 /* Modal Content/Box */
 
 .modal-content {
 	background-color: #424242;
-	margin: 15% auto;
+	/*margin: 15% auto;*/
 	/* 15% from the top and centered */
 	padding: 1.2rem;
 	max-width: 100%;
@@ -370,7 +375,7 @@ h1 {
 	-webkit-animation-duration: 0.6s;
 	animation-timing-function: ease;
 	-webkit-animation-timing-function: ease;
-  margin-top: 20px;
+  /*margin-top: 20px;*/
 
 	visibility: visible !important;
 }
@@ -643,6 +648,10 @@ body {
   margin-left: -16% !important;
 }
 
+.btn-floating{
+  z-index: 0 !important;
+}
+
 .validate, .valid{
   color: white;
   box-shadow: #ff7f00;
@@ -650,6 +659,27 @@ body {
 .materialize-textarea {
   color: #ff7f00;
 }
+
 .top-margin{
   margin-top: 120px;
+
+
+.production{
+  margin-left: 11vw !important;
+}
+
+.title-container > h3{
+  color: white;
+  background: transparent !important;
+  border-bottom: 5px solid #ff7f00 !important;
+}
+.exmaple-commit{
+  margin-top: 0%;
+  background-color: #2d2d2d;
+  color: white;
+}
+
+.exmaple-commit .card-content{
+  background: #424242;
+
 }

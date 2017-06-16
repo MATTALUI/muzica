@@ -35,22 +35,22 @@ function makeCards(array){
       let content = $(master).children()[$(master).children().length -1];
       let masterButton = $(content).children()[$(content).children().length-1]
       $(masterButton).hide();
-      // console.log(masterButton);
     }
   }
 }
 
 function makeColaboratorCards(array){
   $('#collaborators-list').empty();
-  // $('.card-container').empty();
   var list = document.getElementById('collaborators-list')
   for (var i = 0; i < array.length; i++){
       var li = document.createElement('li');
-      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name + ' ' + array[i].sc_username
+      li.innerHTML = array[i].first_name+ ' ' + array[i].last_name +
+      //  ' ' + array[i].sc_username +
+      '\n<button class="delete-collaborator button">REMOVE FROM PROJECT</button>'
       li.setAttribute('data',("userId:"+array[i].id))
-      li.setAttribute('id',array[i].id)
+      li.setAttribute('id','collab'+array[i].id)
       li.setAttribute('class','center-align')
-      if(!(document.getElementById(array[i].id))){
+      if(!(document.getElementById('collab'+array[i].id))){
         list.appendChild(li)
       }
   }
@@ -88,7 +88,7 @@ function addCommit(){
           is_master: ''
         }
         makeCards(res);
-        makeDropdown(res)
+        // makeDropdown(res)
         clearForm();
       }
     });
@@ -103,12 +103,10 @@ $(document).ready(function(){
   $.get('projects', function(response){
       makeDropdown(response)
       $.get('permissions/me', function(res){
-        console.log(response);
         makeDropdownWithCollabs(res)
       });
   });
   $.get(`/permissions/${projectId}`,(response)=>{
-    // console.log('whos your user!!!!',response);
     makeColaboratorCards(response)
   })
   addCommit();
@@ -117,9 +115,10 @@ $(document).ready(function(){
 $('body').on('click', '.delete-commit', () => {
   var commitId = ($(event.target).closest('.exmaple-commit').attr('id'));
   var projectId = getUrlVars().id;
+  console.log(commitId);
   $.ajax({
     type: "DELETE",
-    // url: "projects",
+    url: "projects/commit",
     data: {commit_id: commitId, project_id:  projectId},
     success: function(res){
       makeCards(res);
@@ -139,6 +138,19 @@ $('body').on('click', '.make-master-button', ()=>{
     }
   })
 
+});
+$('body').on('click', '.delete-collaborator', ()=>{
+  var projectId = getUrlVars().id;
+  let itemId = $(event.target).closest('li').attr('id');
+  let collabId = Number($(event.target).closest('li').attr('id').split('collab')[1]);
+  $.ajax({
+    type: 'DELETE',
+    url: `/permissions/${projectId}`,
+    data: {userId: collabId},
+    success: function(response){
+      $(`#${itemId}`).remove();
+    }
+  });
 });
 
 function makeDropdownWithCollabs(array){
