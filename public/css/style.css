@@ -82,7 +82,7 @@
 }
 
 .login-box {
-  opacity: .95;
+  opacity: .85;
   background-color: #424242;
   height: 550px;
   width: 800px;
@@ -292,7 +292,6 @@ h1 {
 	transition: all 60ms ease;
 	transform: scale(0.97);
 }
-
 
 /***********************/
 /*  modal form layout  */
