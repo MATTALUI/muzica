@@ -45,6 +45,10 @@ h3 {
   margin-left: 40%;
 }
 
+#hiding-spot{
+  /*display: none;*/
+}
+
 .big-boi{
   margin: 0 0 0 0;
 }
