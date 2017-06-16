@@ -119,6 +119,8 @@ h3 {
 
 .exmaple-commit .card-content{
   background: #424242;
+  border-top: 1px solid silver;
+  border-bottom: 3px solid #2d2d2d;
 }
 .nav-gradient {
   background: rgba(255,175,75,1);

@@ -681,6 +681,8 @@ body {
 
 .exmaple-commit .card-content{
   background: #424242;
+  border-top: 1px solid silver;
+  border-bottom: 2px solid #2d2d2d;
 }
 
 .login-headers{
