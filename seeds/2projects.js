@@ -26,6 +26,19 @@ exports.seed = function(knex, Promise) {
         project_owner: 1,
         project_title: 'Space Cats',
         project_description: 'Project for g49.'
+      },
+      {
+        project_owner: 5,
+        project_title: 'Alex Trainor Experience',
+        project_description: 'Shred City'
+      },{
+        project_owner: 6,
+        project_title: 'Redbone',
+        project_description: 'Fire!'
+      },{
+        project_owner: 7,
+        project_title: 'World Star Hip Hop',
+        project_description: 'Fire!'
       }]);
 
     }).then(function(){

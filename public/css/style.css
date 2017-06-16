@@ -70,7 +70,7 @@
   margin: auto;
 }
 .login-button-container{
-  margin-left: 8%;
+  /*margin-left: 8%;*/
 }
 
 .project-container{
@@ -101,10 +101,14 @@
   background-color: #ff7f00;
   padding-right: 50px;
   padding-left: 50px;
-  margin-right: 120px;
+  /*margin-right: 120px;*/
 }
 .btn:hover, .btn-large:hover {
   background-color: #ff7f00;
+}
+
+#login,#modal-button{
+  width:210px;
 }
 .btn, .btn-large {
   text-decoration: none;
