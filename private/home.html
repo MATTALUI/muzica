@@ -53,20 +53,18 @@
     </div>
   </nav>
   <div class="body_container">
-
+    <div class="title-container">
+      <h3 class="title"></h3>
+    </div>
     <div class="main-body">
       <div class="row">
         <a href="#0" id="modal-button" class="waves-light orange darken-4 btn-large button good newProjectButton">New Project</a>
         <div class="orange-text text-darken-4 col s10 offset-s1 m8 offset-m2 project-history">
           <br>
           <div>
-            <div id="myModal" class="modal">
-
-              <!-- Modal content -->
-
+            <div id="myModal" class="modal gangsterrr">
               <div class="modal-content slideDown">
                 <span class="right-align close" id="closeModal">&times;</span>
-                <!-- <span class="close" id="closeModal">&times;</span> -->
                 <div class="modal-header modal-text">
                   <h2>New Project</h2>
                 </div>
@@ -80,32 +78,40 @@
                       <label for="">Description</label>
                       <input id="new_project_description" type="text">
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                    <input id="save_project_button" type="submit" class="button good modal-action modal-close" value="Save">
-                  </form>
-                  </div>
+                </div>
+                </form>
+                <div class="modal-footer">
+                  <input id="save_project_button" type="submit" class="button good modal-action modal-close" value="Save">
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div id="modal1" class="modal slidedown">
-          <form class="col s12 commit-data">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="title" type="text" class="validate" style= >
-                <label for="titel">New Title</label>
-              </div>
+
+        <div id="modal1" class="modal">
+          <div class="modal-content slideDown">
+            <div class="modal-header modal-text">
+              <h2>Update Project</h2>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <textarea id="description" class="materialize-textarea"></textarea>
-                <label for="description">New Description</label>
+            <form class="col s12 commit-data">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="title" type="text" class="validate" style=>
+                  <label for="titel">New Title</label>
+                </div>
               </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="description" class="materialize-textarea"></textarea>
+                  <label for="description">New Description</label>
+                </div>
+              </div>
+            </form>
+            <div class="modal-footer">
+              <input type="submit" class="button good update-project modal-close" value="Save">
             </div>
-          </form>
-          <div class="waves-orange btn-flat update-project modal-close" style="background: #ff7f00;">Update</div>
-         </div>
+          </div>
+        </div>
         <div class="project-container">
         </div>
       </div>
@@ -117,13 +123,15 @@
       <div class="card-image">
         <img class="place-holder-logo" src="../muzicalogo.png" alt="muzica logo" width="100px" height="100px">
         <iframe class="hidden" id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="{{widget_url}}"></iframe>
-        <h3>{{title}}</h3>
-        <a class="btn-floating halfway-fab waves-light orange darken-4" href="production.html?id={{id}}"><i class="material-icons">play_arrow</i></a>
+        <h3 class="center-align">{{title}}</h3>
       </div>
       <div class="card-content">
-        <p>{{comment}}</p>
-        <a class="btn waves-light orange darken-4 delete-project"><i class="material-icons">delete</i></a>
-        <a class="waves-light btn edit" href="#modal1">EDIT</a>
+        <p class="center-align">{{comment}}</p>
+        <br>
+        <br>
+        <a class="btn waves-light orange darken-4 delete-project production"><i class="material-icons">delete</i></a>
+        <a class="waves-light btn edit production" href="#modal1">EDIT</a>
+        <a class="btn halfway-fab waves-light orange darken-4 production" href="production.html?id={{id}}"><i class="material-icons">play_arrow</i></a>
       </div>
     </div>
   </script>
@@ -133,11 +141,13 @@
       <div class="card-image">
         <img class="place-holder-logo" src="../muzicalogo.png" alt="muzica logo" width="100px" height="100px">
         <iframe class="hidden" id="sc-widget" width="100%" height="150" scrolling="no" frameborder="no" src="{{widget_url}}"></iframe>
-        <h3>{{title}}</h3>
-        <a class="btn halfway-fab waves-light orange darken-4" href="production.html?id={{id}}"><i class="material-icons">play_arrow</i></a>
+        <h3 class="center-align">{{title}}</h3>
       </div>
       <div class="card-content">
-        <p>{{comment}}</p>
+        <p class="center-align">{{comment}}</p>
+        <br>
+        <br>
+        <a class="btn halfway-fab waves-light orange darken-4" href="production.html?id={{id}}"><i class="material-icons">play_arrow</i></a>
       </div>
     </div>
   </script>

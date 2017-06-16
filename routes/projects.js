@@ -118,7 +118,7 @@ router.post('/commit', function(req, res, next){
             knex('commits')
             .where('project_id', req.body.projectId)
             .join('users', 'commits.submitted_by','=','users.id')
-            .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+            .select(['first_name', 'commits.id as id', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
             .then(function(commits){
               res.send(commits);
             });
@@ -132,7 +132,7 @@ router.post('/commit', function(req, res, next){
           knex('commits')
           .where('project_id', req.body.projectId)
           .join('users', 'commits.submitted_by','=','users.id')
-          .select(['first_name', 'last_name', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
+          .select(['first_name', 'last_name','commits.id as id', 'project_id', 'widget_url','submitted_by', 'is_master', 'sc_username','commit_comment'])
           .then(function(commits){
             res.send(commits);
           });
